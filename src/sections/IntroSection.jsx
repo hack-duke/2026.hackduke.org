@@ -3,7 +3,7 @@ import './IntroSection.css';
 export default function IntroSection() {
   return (
     <div className="intro-container">
-      <nav className="intro-navbar">
+      {/* <nav className="intro-navbar">
         <div className="intro-brand">HackDuke</div>
         <ul className="intro-nav-items">
           <li>About</li>
@@ -11,9 +11,9 @@ export default function IntroSection() {
           <li>Schedule</li>
           <li>FAQ</li>
         </ul>
-      </nav>
+      </nav> */}
 
-      <header className="intro-hero">
+      {/* <header className="intro-hero">
         <div className="intro-hero-content">
           <div className="intro-eyebrow">Welcome to the Future</div>
           <h1>Scroll Beyond Limits</h1>
@@ -26,9 +26,9 @@ export default function IntroSection() {
             <button className="intro-cta">Learn More</button>
           </div>
         </div>
-      </header>
+      </header> */}
 
-      <section className="intro-gallery">
+      {/* <section className="intro-gallery">
         {[1,2,3,4,5,6,7,8].map((n) => (
           <figure key={n} className="intro-card">
             <img
@@ -39,10 +39,10 @@ export default function IntroSection() {
             <figcaption>Inspiration {n}</figcaption>
           </figure>
         ))}
-      </section>
+      </section> */}
 
       {/* Stats strip */}
-      <section className="intro-stats">
+      {/* <section className="intro-stats">
         <div className="intro-stat">
           <div className="intro-stat-value">2k+</div>
           <div className="intro-stat-label">Attendees</div>
@@ -59,10 +59,10 @@ export default function IntroSection() {
           <div className="intro-stat-value">60+</div>
           <div className="intro-stat-label">Workshops</div>
         </div>
-      </section>
+      </section> */}
 
       {/* Feature cards */}
-      <section className="intro-features">
+      {/* <section className="intro-features">
         {[
           { icon: '⚡', title: 'Performant', desc: '60fps animations with GPU-accelerated transforms.' },
           { icon: '📱', title: 'Responsive', desc: 'Looks great on every screen and device.' },
@@ -75,10 +75,10 @@ export default function IntroSection() {
             <p>{f.desc}</p>
           </article>
         ))}
-      </section>
+      </section> */}
 
       {/* Timeline */}
-      <section className="intro-timeline">
+      {/* <section className="intro-timeline">
         {[
           { step: 'Register', desc: 'Save your spot and join the community.' },
           { step: 'Form Teams', desc: 'Connect with makers to build something bold.' },
@@ -93,21 +93,21 @@ export default function IntroSection() {
             </div>
           </div>
         ))}
-      </section>
+      </section> */}
 
       {/* Sponsors grid (placeholders) */}
-      <section className="intro-sponsors">
+      {/* <section className="intro-sponsors">
         {[...Array(10)].map((_, i) => (
           <div className="intro-sponsor" key={i}>LOGO</div>
         ))}
-      </section>
+      </section> */}
 
-      <footer className="intro-footer">
+      {/* <footer className="intro-footer">
         <div className="intro-footer-inner">
           <span>Built with React + Vite</span>
           <span>© {new Date().getFullYear()} HackDuke</span>
         </div>
-      </footer>
+      </footer> */}
 
 
       <section className="down1">
