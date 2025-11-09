@@ -1,7 +1,7 @@
 import HorizontalScrollSection from './components/HorizontalScrollSection';
 import VerticalSection from './components/VerticalSection';
 import IntroSection from './sections/IntroSection';
-import LongHorizontalSection from './sections/LongHorizontalSection';
+import HorizontalSection2 from './sections/HorizontalSection2';
 import './App.css';
 
 function App() {
@@ -89,7 +89,7 @@ function App() {
 
       {/* Section 4: Long Horizontal - Custom children */}
       <HorizontalScrollSection>
-        <LongHorizontalSection /> 
+        <HorizontalSection2 /> 
       </HorizontalScrollSection>
 
       {/* Section 5: Footer/Contact - Vertical */}
