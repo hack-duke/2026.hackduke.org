@@ -1,0 +1,27 @@
+.apply-container-app {
+  position: absolute;
+  top: 90px; /* Adjust to move lower */
+  right: 170px; /* Adjust to move more to the left */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.apply-bg-app {
+  width: 120px;
+  height: auto;
+}
+
+.apply-button-app {
+  position: absolute;
+  top: 42%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-button-app img {
+  width: 80px;
+  height: auto;
+}

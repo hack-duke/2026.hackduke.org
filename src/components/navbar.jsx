@@ -1,43 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import NavbarSVG from '../assets/navbar.svg';
-import ButtonSVG from '../assets/applyButton.svg';
+import React from 'react';
+import './navbar.css';
+import navbarBg from '../assets/navbarBg.svg';
+import aboutNavbar from '../assets/aboutNavbar.svg';
+import faqsNavbar from '../assets/faqsNavbar.svg';
+import scheduleNavbar from '../assets/scheduleNavbar.svg';
+import sponsorsNavbar from '../assets/sponsorsNavbar.svg';
+import tracksNavbar from '../assets/tracksNavbar.svg';
+import homeButton from '../assets/homeButton.svg';
 
 export default function Navbar() {
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    function handleScroll() {
-      if (window.scrollY < lastScrollY) {
-        setShow(true);  // scrolling up
-      } else {
-        setShow(false); // scrolling down
-      }
-      setLastScrollY(window.scrollY);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
-
-  const handleClick = () => {
-    console.log('Apply button clicked!');
-    // add navigation logic here
-  };
-
   return (
-    <div
-      className={`fixed top-0 right-0 w-auto transition-transform duration-300 z-50 ${
-        show ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      <div className="flex flex-col items-center">
-        <img src={NavbarSVG} className="w-full" alt="Navbar background" />
-        <div className="mt-[-52px]"> {/* adjust spacing if needed */}
-          <button onClick={handleClick}>
-            <img src={ButtonSVG} className="w-12 h-12" alt="Apply button" />
-          </button>
-        </div>
+    <div className="navbar-container">
+      <img src={navbarBg} alt="Navbar Background" className="navbar-bg" />
+      <div className="navbar-buttons">
+        <button><img src={homeButton} alt="Home" /></button>
+        <button><img src={aboutNavbar} alt="About" /></button>
+        <button><img src={tracksNavbar} alt="Tracks" /></button>
+        <button><img src={scheduleNavbar} alt="Schedule" /></button>
+        <button><img src={faqsNavbar} alt="FAQs" /></button>
+        <button><img src={sponsorsNavbar} alt="Sponsors" /></button>
       </div>
     </div>
   );

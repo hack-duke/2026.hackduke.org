@@ -1,0 +1,63 @@
+.navbar-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  top:0;
+  right:10vw;
+  height: 150px; 
+  z-index: 20;
+}
+
+.navbar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.navbar-buttons {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0px;
+}
+
+.navbar-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-buttons img {
+  height: 49px;
+}
+
+.apply-container {
+  position: absolute;
+  top: 80px; 
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apply-bg {
+  width: 150px; 
+  height: auto;
+}
+
+.apply-button {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-button img {
+  width: 100px;
+  height: auto;
+}
