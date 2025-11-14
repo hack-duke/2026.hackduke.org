@@ -7,7 +7,7 @@
 
 /* Sticky header that hides on scroll down and shows on scroll up */
 .sticky-header {
-  position: relative;
+  position: absolute;
   top: 0;
   z-index: 1000;
   width: 100vw;               /* span viewport */
@@ -74,4 +74,88 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Reset previous always-on flex */
+.desktop-only { display: none; }
+.mobile-inline { display: none; }
+
+/* Desktop ≥768px */
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* Mobile <768px */
+@media (max-width: 767px) {
+  .mobile-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Mobile menu overlay (hidden by default, shown via React condition) */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,15,20,0.92);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  gap: 2rem;
+  z-index: 1050;
+  animation: fadeIn 150ms ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Make navbar + apply button layout vertical inside overlay */
+.mobile-menu-overlay .navbar-container {
+  position: static;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.mobile-menu-overlay .navbar-bg {
+  display: none;
+}
+.mobile-menu-overlay .navbar-buttons {
+  flex-direction: column;
+  gap: 1rem;
+}
+.mobile-menu-overlay .navbar-buttons img {
+  height: 42px;
+}
+
+.mobile-menu-overlay .apply-container-app {
+  position: static;
+  top: auto;
+  right: auto;
+}
+
+/* Responsive: switch to hamburger */
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none;
+  }
+  .sticky-header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+  }
+  .header-items {
+    position: relative;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
 }

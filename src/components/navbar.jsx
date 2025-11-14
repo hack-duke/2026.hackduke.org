@@ -7,19 +7,29 @@ import scheduleNavbar from '../assets/scheduleNavbar.svg';
 import sponsorsNavbar from '../assets/sponsorsNavbar.svg';
 import tracksNavbar from '../assets/tracksNavbar.svg';
 import homeButton from '../assets/homeButton.svg';
+import ApplyButton from './applyButton';
 
-export default function Navbar() {
+export function NavbarButton({imageSrc, alt, url = '#', className = ''}){
   return (
-    <div className="navbar-container">
+    <a href={url} className={`navbar-button ${className}`}>
+      <img className='navbar-button-img' src={imageSrc} alt={alt} />
+    </a>
+  )
+}
+
+export default function Navbar({ className = '' }) {
+  return (
+    <div className={`navbar-container ${className}`}>
       <img src={navbarBg} alt="Navbar Background" className="navbar-bg" />
       <div className="navbar-buttons">
-        <button><img src={homeButton} alt="Home" /></button>
-        <button><img src={aboutNavbar} alt="About" /></button>
-        <button><img src={tracksNavbar} alt="Tracks" /></button>
-        <button><img src={scheduleNavbar} alt="Schedule" /></button>
-        <button><img src={faqsNavbar} alt="FAQs" /></button>
-        <button><img src={sponsorsNavbar} alt="Sponsors" /></button>
+        <NavbarButton imageSrc={homeButton} alt="Home" url="https://hackduke.org/" className='home-button'/>
+        <NavbarButton imageSrc={aboutNavbar} alt="About" url="#about" />
+        <NavbarButton imageSrc={tracksNavbar} alt="Tracks" url="#tracks" />
+        <NavbarButton imageSrc={scheduleNavbar} alt="Schedule" url="#schedule" />
+        <NavbarButton imageSrc={faqsNavbar} alt="FAQs" url="#faqs" />
+        <NavbarButton imageSrc={sponsorsNavbar} alt="Sponsors" url="#sponsors" />
       </div>
+      <ApplyButton/>
     </div>
   );
 }

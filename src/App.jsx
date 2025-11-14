@@ -4,50 +4,44 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar'
 import ApplyButton from './components/applyButton'
+import HamburgerMenu from './components/hamburgerMenu'
 
 function App() {
   const [count, setCount] = useState(0)
   const [showHeader, setShowHeader] = useState(true)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const lastScrollY = useRef(0)
 
   useEffect(() => {
     lastScrollY.current = window.scrollY
-
     let ticking = false
     const threshold = 5
-
     const onScroll = () => {
       const current = window.scrollY
-
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const delta = current - lastScrollY.current
-
-          // Always show at very top
           if (current <= 0) {
             setShowHeader(true)
             lastScrollY.current = 0
             ticking = false
             return
           }
-
+            // Close mobile menu when user scrolls down
           if (Math.abs(delta) > threshold) {
             if (delta > 0) {
-              // Scrolling down
               setShowHeader(false)
+              setMobileOpen(false)
             } else {
-              // Scrolling up
               setShowHeader(true)
             }
             lastScrollY.current = current
           }
-
           ticking = false
         })
         ticking = true
       }
     }
-
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -56,8 +50,17 @@ function App() {
     <>
       <div className={`sticky-header ${showHeader ? 'show' : 'hide'}`}>
         <div className="header-items">
-          <ApplyButton />
-          <Navbar />
+          <Navbar className="desktop-only" />
+          <HamburgerMenu
+            open={mobileOpen}
+            onToggle={() => setMobileOpen(o => !o)}
+          />
+          {mobileOpen && (
+            <>
+              <Navbar className="mobile-inline" />
+              <ApplyButton className="mobile-inline" />
+            </>
+          )}
         </div>
       </div>
       <div>
