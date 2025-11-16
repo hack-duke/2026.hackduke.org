@@ -1,0 +1,104 @@
+/* Continuous horizontal strip */
+.lh-strip {
+  position: relative;
+  flex: 0 0 auto; /* don’t shrink in flex parent */
+  height: 100%;
+  min-width: 100vw;
+}
+
+.lh-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0f0f1e 0%, #141a35 50%, #0f0f1e 100%);
+  /* Subtle light textures, no hard panel edges */
+  background-blend-mode: screen;
+}
+
+.lh-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw; /* continuous viewport-width columns */
+  height: 100%;
+  align-items: center;
+}
+
+.lh-cell {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.lh-card {
+  position: relative;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 3vw, 2rem);
+  border-radius: 1rem;
+  max-width: min(920px, 92vw);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: center;
+  color: #fff;
+}
+
+.lh-eyebrow {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.lh-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0 0 0.75rem 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lh-desc {
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0 auto;
+  max-width: 70ch;
+}
+
+.lh-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.lh-btn {
+  padding: 0.8rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-weight: 600;
+}
+
+.lh-btn.primary {
+  border: none;
+  background: linear-gradient(135deg, #6d5efc, #3fb8ff);
+}
+
+.lh-counter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .lh-card { max-width: 100%; border-radius: 0.75rem; }
+  .lh-actions { flex-wrap: wrap; }
+}
