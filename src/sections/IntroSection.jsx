@@ -21,6 +21,7 @@ export default function IntroSection() {
           <img src="/images/vending1.svg" alt="" className="down1-vending-image"/>
           <img src="/images/Card Reader.svg" alt="" className="down1-vending-card_reader"/>
         </div>
+        {/* <img src="/images/lower right.svg" alt="" className="down1-lower_right"/> */}
       </section>
     </div>
   );

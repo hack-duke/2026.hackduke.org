@@ -1,4 +1,4 @@
-<svg width="439" height="2261" viewBox="0 0 439 2261" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="439" height="1181" viewBox="0 0 439 1181" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M21.7284 128L439.224 38V278L21.7284 368V128Z" fill="#51595D"/>
 <path d="M21.7284 382.5L439.224 312.5V552.5L21.7284 612V382.5Z" fill="#51595D"/>
 <path d="M439.368 100V38L21.7284 128.5L439.368 100Z" fill="#333638"/>
@@ -8,7 +8,6 @@
 <path d="M0 94H21.7284V637H0V94Z" fill="#40464A"/>
 <path d="M0 652L439.224 590.5V1181H0L0 652Z" fill="#40464A"/>
 <path d="M0 652L439.224 590.5V1181H0L0 652Z" fill="url(#paint0_linear_2040_1897)" fill-opacity="0.2"/>
-<rect y="1181" width="439.139" height="1080" fill="#3C4145"/>
 <rect x="121.837" y="206.61" width="37.5329" height="30.7001" transform="rotate(1.87705 121.837 206.61)" fill="#0B2A0B"/>
 <rect x="123.287" y="208.158" width="34.5329" height="27.7001" transform="rotate(1.87705 123.287 208.158)" stroke="#C4DDE3" stroke-opacity="0.7" stroke-width="3"/>
 <path d="M100.739 317.633L144.445 220.656C150.688 206.805 169.487 204.698 178.641 216.824L243.11 302.222C252.474 314.627 244.73 332.505 229.276 334.159L121.102 345.737C105.736 347.381 94.3898 331.721 100.739 317.633Z" fill="#0B2A0B" stroke="#C4DDE3" stroke-opacity="0.7" stroke-width="3"/>
