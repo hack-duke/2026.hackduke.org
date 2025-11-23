@@ -48,12 +48,12 @@
 }
 
 .down1-vending {
-  top: 13.6vw;
-  position: relative;
+  top: 32vw;
+  position: absolute;
   width: 54vw;
   height: auto;
-  aspect-ratio: calc(1039/2558);
-  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .down1-vending-image {
