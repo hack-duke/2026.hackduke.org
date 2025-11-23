@@ -22,6 +22,10 @@ export default function IntroSection() {
         <div className="down1-vending">
           <img src="/images/CodeForGood Sign.svg" alt="" className="down1-codeforgood_sign"/>
           <img src="/images/vending.svg" alt="" className="down1-vending-image"/>
+          <div className="down1-bottom_slot">
+            <img src="/images/bottom slot lowest layer.svg" alt="" className="lowest_layer"/>
+            <img src="/images/bottom slot top layer.svg" alt="" className="top_layer"/>
+          </div>
         </div>
       </section>
     </div>
