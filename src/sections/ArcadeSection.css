@@ -1,0 +1,266 @@
+/* Arcade Section - Pixel Perfect with Responsive Scaling */
+/* Canvas Size: 1920px × 4320px */
+
+.arcade-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  background: #1a1a1a;
+  padding-bottom: calc((4320 / 1920) * 100%); /* Aspect ratio padding trick */
+}
+
+.arcade-scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background Pattern */
+.arcade-bg-pattern {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* Floor Elements */
+.arcade-floor {
+  position: absolute;
+  left: 0%;      /* 0/1920 from Figma export */
+  top: 37.82%;   /* 1634/4320 */
+  width: 100%;   /* 1920/1920 from Figma export */
+  height: auto;
+  z-index: 2;
+}
+
+.arcade-floor-lines {
+  position: absolute;
+  left: 0%;      /* 0/1920 from Figma export */
+  top: 38.1%;    /* 1646/4320 */
+  width: 100%;   /* 1920/1920 from Figma export */
+  height: auto;
+  z-index: 3;
+  opacity: 0.3;  /* Reduce opacity to prevent uneven shading */
+  mix-blend-mode: multiply;
+
+}
+
+/* Main Arcade Machines */
+.arcade-machine {
+  position: absolute;
+  height: auto;
+  z-index: 10;
+}
+
+.arcade-blue {
+  left: 28.33%;  /* 544/1920 from Figma export */
+  top: 6.81%;    /* 294/4320 from Figma export */
+  width: 37.92%; /* 728/1920 from Figma export */
+}
+
+.arcade-green {
+  left: 48.75%;  /* 936/1920 from Figma export */
+  top: 8.59%;    /* 371/4320 from Figma export */
+  width: 37.08%; /* 712/1920 from Figma export */
+}
+
+.arcade-red {
+  left: 65.21%;  /* 1252/1920 from Figma export */
+  top: 5.95%;    /* 257/4320 */
+  width: 34.79%; /* 668/1920 from Figma export */
+}
+
+/* Claw Machine Container */
+.arcade-claw-machine-container {
+  position: absolute;
+  left: 0%;        /* 0/1920 */
+  top: 7.34%;      /* 317/4320 */
+  width: 40.54%;   /* 778.41/1920 */
+  height: 32.41%;  /* 1399.96/4320 */
+  z-index: 11;
+}
+
+/* Claw Machine Components (positioned relative to container) */
+.claw-cabinet-base {
+  position: absolute;
+  left: 9.25%;   /* 72/778 from Figma export - relative to container */
+  top: 0%;
+  width: 90.74%; /* 706/778 from Figma export */
+  height: auto;
+  z-index: 1;
+}
+
+.claw-prizes {
+  position: absolute;
+  left: 78.33%;  /* 1504/1920 from Figma export - positioned relative to scene */
+  top: 27.36%;   /* 1182/4320 from Figma export */
+  width: 21.67%; /* 416/1920 from Figma export */
+  height: auto;
+  z-index: 12;   /* Above arcade machines (z-index: 10) to overlap red arcade */
+}
+
+.claw-cable {
+  position: absolute;
+  left: 0%;
+  top: 0.07%;    /* 1/1400 from Figma export */
+  width: 9.9%;   /* 77/778 from Figma export */
+  height: auto;
+  z-index: 3;
+}
+
+.claw-mechanism {
+  position: absolute;
+  left: 44.99%;  /* 350/778 from Figma export */
+  top: 13.79%;   /* 193/1400 from Figma export */
+  width: 19.15%; /* 149/778 from Figma export */
+  height: auto;
+  z-index: 4;
+}
+
+.claw-window-frame {
+  position: absolute;
+  left: 14.52%;  /* 113/778 from Figma export */
+  top: 13.79%;   /* 193/1400 from Figma export */
+  width: 80.08%; /* 623/778 from Figma export */
+  height: auto;
+  z-index: 5;
+}
+
+.claw-controls {
+  position: absolute;
+  left: 16.45%;  /* 128/778 from Figma export */
+  top: 46.36%;   /* 649/1400 from Figma export */
+  width: 76.22%; /* 593/778 from Figma export */
+  height: auto;
+  z-index: 6;
+}
+
+.claw-round-controller {
+  position: absolute;
+  left: 72.75%;  /* 566/778 from Figma export */
+  top: 40.57%;   /* 568/1400 from Figma export */
+  width: 10.41%; /* 81/778 from Figma export */
+  height: auto;
+  z-index: 6;
+}
+
+.claw-faq-overlay {
+  position: absolute;
+  left: 20.05%;  /* 156/778 from Figma - relative to claw container */
+  top: 70.29%;   /* (1301-317)/1400 from Figma - relative to claw container */
+  width: 58.35%; /* 454/778 from Figma - relative to claw container */
+  height: auto;
+  z-index: 7;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.claw-faq-overlay:hover {
+  transform: scale(1.05);
+}
+
+/* Foreground Props */
+.arcade-cat {
+  position: absolute;
+  left: 0.47%;   /* 9/1920 */
+  top: 0.32%;    /* 14/4320 */
+  width: 25.68%; /* 493/1920 */
+  height: auto;
+  z-index: 20;
+}
+
+.arcade-boxes {
+  position: absolute;
+  left: 0%;      /* 0/1920 from Figma export */
+  top: 73.56%;   /* 3178/4320 from Figma export */
+  width: 100%;   /* 1920/1920 from Figma export */
+  height: auto;
+  z-index: 21;
+}
+
+.arcade-stool-left {
+  position: absolute;
+  left: 35.05%;  /* 673/1920 from Figma export */
+  top: 28.19%;   /* 1218/4320 from Figma export */
+  width: 19.53%; /* 375/1920 from Figma export */
+  height: auto;
+  z-index: 22;
+}
+
+.arcade-stool-right {
+  position: absolute;
+  left: 55.89%;  /* 1073/1920 from Figma export */
+  top: 32.18%;   /* 1390/4320 from Figma export */
+  width: 22.55%; /* 433/1920 from Figma export */
+  height: auto;
+  z-index: 22;
+}
+
+/* Sponsor Section */
+.arcade-sponsor-placeholder {
+  position: absolute;
+  left: 31.25%;  /* 600/1920 */
+  top: 68.17%;   /* 2945/4320 */
+  width: 22.92%; /* 440/1920 */
+  height: auto;
+  z-index: 30;
+}
+
+.arcade-sponsor-logos {
+  position: absolute;
+  left: 7.81%;   /* 150/1920 from Figma export */
+  top: 70.88%;   /* 3062/4320 from Figma export */
+  width: 72.55%; /* 1393/1920 from Figma export */
+  height: auto;
+  z-index: 31;
+}
+
+/* Overlays and Shading */
+.arcade-overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  object-fit: cover;
+}
+
+.arcade-shading-1 {
+  position: absolute;
+  top: 52.92%;   /* 2286/4320 from Figma export */
+  left: 0;
+  width: 100%;
+  height: 47.08%; /* 2034/4320 - height from Figma */
+  z-index: 41;
+  pointer-events: none;
+  opacity: 1;
+  object-fit: cover;
+}
+
+arcade-shading-2 {
+  position: absolute;
+  top: 74.54%;   /* 3220/4320 from Figma export */
+  left: 0;
+  width: 100%;
+  height: 25.46%; /* 1100/4320 - height from Figma */
+  z-index: 42;
+  pointer-events: none;
+  opacity: 1;
+  object-fit: cover;
+}
+
+/* Allow overflow elements (floor, boxes) to show */
+.arcade-container {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+

@@ -9,6 +9,7 @@ import HorizontalScrollSection from './components/HorizontalScrollSection';
 import VerticalSection from './components/VerticalSection';
 import IntroSection from './sections/IntroSection';
 import LongHorizontalSection from './sections/LongHorizontalSection';
+import ArcadeSection from './sections/ArcadeSection';
 
 function App() {
   // header / mobile menu state & scroll-hide behavior
@@ -165,7 +166,12 @@ function App() {
           <LongHorizontalSection />
         </HorizontalScrollSection>
 
-        {/* Section 5: Footer/Contact - Vertical */}
+        {/* Section 5: Arcade - Vertical */}
+        <VerticalSection backgroundColor="#0f0f1e">
+          <ArcadeSection />
+        </VerticalSection>
+
+        {/* Section 6: Footer/Contact - Vertical */}
         <VerticalSection backgroundColor="#0f0f1e">
           <h2>Ready to Begin?</h2>
           <p>
