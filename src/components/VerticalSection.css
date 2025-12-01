@@ -25,6 +25,17 @@
   width: 100%;
 }
 
+/* Remove padding for arcade section */
+.vertical-section.arcade-vertical {
+  padding: 0;
+}
+
+/* Make inner wrapper full-bleed for arcade */
+.vertical-section.arcade-vertical .vertical-content {
+  max-width: none;
+  width: 100%;
+}
+
 .vertical-content {
   max-width: 1200px;
   width: 100%;

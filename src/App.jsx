@@ -1,11 +1,68 @@
+import { useState, useEffect, useRef } from 'react';
+import './App.css';
+
+import Navbar from './components/navbar';
+import HamburgerMenu from './components/hamburgerMenu';
+import MobileMenuOverlay from './components/MobileMenuOverlay';
+
 import HorizontalScrollSection from './components/HorizontalScrollSection';
 import VerticalSection from './components/VerticalSection';
 import IntroSection from './sections/IntroSection';
 import LongHorizontalSection from './sections/LongHorizontalSection';
-import './App.css';
+import ArcadeSection from './sections/ArcadeSection';
 
 function App() {
-  // Panel data for first horizontal section
+  // header / mobile menu state & scroll-hide behavior
+  const [showHeader, setShowHeader] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+    let ticking = false;
+    const threshold = 5;
+
+    const onScroll = () => {
+      const current = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const delta = current - lastScrollY.current;
+
+          if (current <= 0) {
+            setShowHeader(true);
+            lastScrollY.current = 0;
+            ticking = false;
+            return;
+          }
+
+          if (Math.abs(delta) > threshold) {
+            if (delta > 0) {
+              // scrolled down
+              setShowHeader(false);
+              setMobileOpen(false); // close overlay on downward scroll
+            } else {
+              // scrolled up
+              setShowHeader(true);
+            }
+            lastScrollY.current = current;
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // lock background scroll while menu open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+  }, [mobileOpen]);
+
+  // Panel data for horizontal section
   const panels1 = [
     {
       id: 1,
@@ -32,7 +89,7 @@ function App() {
       id: 4,
       color: '#e67e22',
       title: 'Innovate',
-      description: 'Push boundaries and reimagine what\'s possible with cutting-edge technology.',
+      description: "Push boundaries and reimagine what's possible with cutting-edge technology.",
       emoji: '💡'
     },
     {
@@ -44,69 +101,41 @@ function App() {
     }
   ];
 
-  // (Optional) Remove if not using panel arrays for horizontals
-
   return (
-    <div className="app">
-      {/* Section 1: Hero/Intro - Vertical */}
-      <VerticalSection backgroundColor="#0f0f1e" className="intro-vertical">
-        <IntroSection />
-      </VerticalSection>
-
-      {/* Section 2: First Horizontal - Sliding panels */}
-      <HorizontalScrollSection panels={panels1} />
-
-      {/* Section 3: About/Features - Vertical */}
-      <VerticalSection backgroundColor="#1a1a2e">
-        <h2>Built for Innovation</h2>
-        <p>
-          A modern approach to web scrolling that creates engaging,
-          memorable experiences for your users.
-        </p>
-        <div className="features-grid">
-          <div className="feature-card">
-            <span className="icon">⚡</span>
-            <h4>Performant</h4>
-            <p>Optimized with CSS transforms and passive scroll listeners for smooth 60fps animations.</p>
-          </div>
-          <div className="feature-card">
-            <span className="icon">📱</span>
-            <h4>Responsive</h4>
-            <p>Adapts seamlessly across desktop, tablet, and mobile devices with touch support.</p>
-          </div>
-          <div className="feature-card">
-            <span className="icon">🎯</span>
-            <h4>Precise</h4>
-            <p>Mathematical scroll mapping ensures accurate horizontal translation at every point.</p>
-          </div>
-          <div className="feature-card">
-            <span className="icon">🎨</span>
-            <h4>Beautiful</h4>
-            <p>Modern design with smooth transitions, shadows, and glassmorphism effects.</p>
-          </div>
+    <>
+      {/* Sticky header */}
+      <div className={`sticky-header ${showHeader ? 'show' : 'hide'} ${mobileOpen ? 'overlay-open' : ''}`}>
+        <div className="header-items">
+          <Navbar className="desktop-only" />
+          <HamburgerMenu open={mobileOpen} onToggle={() => setMobileOpen(o => !o)} />
         </div>
-      </VerticalSection>
+      </div>
 
-      {/* Section 4: Long Horizontal - Custom children */}
-      <HorizontalScrollSection>
-        <LongHorizontalSection /> 
-      </HorizontalScrollSection>
+      {/* Mobile overlay */}
+      {mobileOpen && (
+        <MobileMenuOverlay
+          open={mobileOpen}
+          onClose={() => setMobileOpen(false)}
+          onToggle={() => setMobileOpen(o => !o)}
+        />
+      )}
 
-      {/* Section 5: Footer/Contact - Vertical */}
-      <VerticalSection backgroundColor="#0f0f1e">
-        <h2>Ready to Begin?</h2>
-        <p>
-          Create your own alternating scroll experience and captivate your audience
-          with this innovative approach to web design.
-        </p>
-        <button className="cta-button">Get Started</button>
-        <div className="footer-info">
-          <p style={{ marginTop: '3rem', fontSize: '1rem', opacity: 0.6 }}>
-            Built with React, Vite, and modern web technologies
-          </p>
-        </div>
-      </VerticalSection>
-    </div>
+      <div className="app">
+        {/* Section 1: Hero/Intro - Vertical */}
+        <VerticalSection backgroundColor="#0f0f1e" className="intro-vertical">
+          <IntroSection />
+        </VerticalSection>
+
+        {/* Section 2: First Horizontal - Sliding panels */}
+        <HorizontalScrollSection panels={panels1} />
+
+
+        {/* Section 3: Arcade - Vertical */}
+        <VerticalSection backgroundColor="#0f0f1e" className="arcade-vertical">
+          <ArcadeSection />
+        </VerticalSection>
+      </div>
+    </>
   );
 }
 

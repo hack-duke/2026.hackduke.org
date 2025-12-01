@@ -1,0 +1,46 @@
+.apply-container-app {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  top: 5vw;
+  right: 3vw;
+}
+
+.apply-bg-app {
+  width: 10vw;
+  height: auto;
+}
+
+.apply-button-app { /* This still need fixing */
+  position: absolute;
+  top: 6.5vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-button-app img {
+  width: 7vw;
+  height: auto;
+}
+
+.apply-container-app.mobile-inline {
+  position: static;
+  top: auto;
+  right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  z-index: 2;
+}
+
+.apply-container-app.mobile-inline .apply-bg-app {
+  width: 100px;
+}
+
+.apply-container-app.mobile-inline .apply-button-app img {
+  width: 68px;
+}
