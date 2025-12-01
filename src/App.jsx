@@ -5,11 +5,6 @@ function App() {
   return (
     <>
       <ClaudeLanding />
-
-      {/* Blank section below landing */}
-      <div className="blank-section">
-
-      </div>
     </>
   )
 }

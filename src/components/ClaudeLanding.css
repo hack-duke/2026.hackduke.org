@@ -1,9 +1,9 @@
 .claude-landing-container {
   position: relative;
   width: 100vw;
-  height: 58.542vw; /* 1124px */
+  height: 62.542vw; /* 1124px */
   overflow: hidden;
-  background: white;
+  background: #425e70;
   margin: 0;
   padding: 0;
 }
@@ -88,23 +88,16 @@
 }
 
 /* Buildings */
-.buildings-body {
+.buildings {
   position: absolute;
-  left: -0.088vw; /* -1.69px */
-  top: 1.490vw; /* 28.61px */
+  left: .004vw; /* -1.69px */
+  top: .0001vw; /* 28.61px */
   width: 95.174vw; /* 1827.37px */
-  height: 28.153vw; /* 540.546px */
+  height: 50.153vw; /* 540.546px */
   z-index: 9;
 }
 
-.building-windows {
-  position: absolute;
-  left: -0.052vw; /* -1px */
-  top: 2.331vw; /* 44.75px */
-  width: 94.375vw; /* 1812px */
-  height: 24.948vw; /* 479px */
-  z-index: 10;
-}
+
 
 /* Cool sunset effect behind */
 .cool-sunset-behind {
@@ -158,15 +151,15 @@
 /* Fence */
 .fence {
   position: absolute;
-  left: 0;
+  left: 0vw;
   top: 34.161vw; /* 655.89px */
-  width: 41.875vw; /* 804px */
-  height: 20.417vw; /* 392px */
+  width: 45.875vw; /* 804px */
+  height: 25.417vw; /* 392px */
   z-index: 16;
 }
 
 /* Ground vectors */
-.vector-77 {
+.ground {
   position: absolute;
   left: -2.760vw; /* -53px */
   top: 46.771vw; /* 898px */
@@ -175,33 +168,6 @@
   z-index: 17;
 }
 
-.vector-78 {
-  position: absolute;
-  left: 23.438vw; /* 450px */
-  top: 50.573vw; /* 971px */
-  width: 11.354vw; /* 218px */
-  height: 2.031vw; /* 39px */
-  z-index: 18;
-}
-
-.vector-80 {
-  position: absolute;
-  left: 41.146vw; /* 790px */
-  top: 50.469vw; /* 969px */
-  width: 14.896vw; /* 286px */
-  height: 2.552vw; /* 49px */
-  transform: scaleY(-1);
-  z-index: 19;
-}
-
-.vector-79 {
-  position: absolute;
-  left: 91.302vw; /* 1753px */
-  top: 51.719vw; /* 993px */
-  width: 11.406vw; /* 219px */
-  height: 1.979vw; /* 38px */
-  z-index: 20;
-}
 
 /* Big bush left */
 .big-bush-left {
@@ -220,7 +186,103 @@
   top: 45.190vw; /* 867.67px */
   width: 12.186vw; /* 233.968px */
   height: 7.563vw; /* 145.221px */
-  z-index: 22;
+  z-index: 19;
+}
+
+/* Interior */
+.interior {
+  position: absolute;
+  left: 49.740vw; /* 955px */
+  top: 33.229vw; /* 638px */
+  width: 41.094vw; /* 789px */
+  height: 17.188vw; /* 330px */
+  z-index: 20;
+}
+
+/* Doors Container */
+.doors-container {
+  position: absolute;
+  left: 59.2vw;
+  top: 33.245vw; /* 638.299px */
+  width: 21.703vw; /* Both doors combined width */
+  height: 18.333vw; /* 352px */
+  z-index: 21;
+}
+
+/* Right Door */
+.right-door {
+  position: absolute;
+  left: 10.713vw; /* Offset within container */
+  top: 0;
+  width: 10.990vw; /* 211px */
+  height: 18.333vw; /* 352px */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Left Door */
+.left-door {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10.990vw; /* 211px */
+  height: 18.333vw; /* 352px */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Invisible hover trigger - DESKTOP ONLY - sits on top to detect hover */
+.doors-hover-trigger {
+  position: absolute;
+  left: 59.2vw;
+  top: 33.245vw; /* 638.299px */
+  width: 21.703vw; /* Both doors combined width */
+  height: 18.333vw; /* 352px */
+  z-index: 33; /* Above everything */
+  cursor: pointer;
+  /* Make it invisible but still detect hover */
+  background: transparent;
+}
+
+/* When hovering the trigger, animate the doors - DESKTOP ONLY */
+.doors-hover-trigger:hover ~ .doors-container .right-door {
+  transform: translateX(100%);
+}
+
+.doors-hover-trigger:hover ~ .doors-container .left-door {
+  transform: translateX(-100%);
+}
+
+/* Mobile click trigger - MOBILE ONLY - hidden by default */
+.doors-mobile-click-trigger {
+  display: none; /* Hidden on desktop */
+}
+
+/* Apply Now Poster Button */
+.apply-now-poster {
+  position: absolute;
+  left: 49.844vw; /* 957px */
+  top: 33.385vw; /* 641px */
+  width: 8.776vw; /* 168.5px */
+  height: 10.038vw; /* 192.72px */
+  z-index: 27;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.apply-now-poster img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.apply-now-poster:hover {
+  transform: scale(1.1);
+}
+
+.apply-now-poster:active {
+  transform: scale(1.05);
 }
 
 /* Convenience store */
@@ -240,18 +302,10 @@
   top: 16.510vw; /* 317px */
   width: 61.146vw; /* 1174px */
   height: 9.896vw; /* 190px */
-  z-index: 24;
+  z-index: 28;
 }
 
-/* Open sign */
-.open-sign {
-  position: absolute;
-  left: 83.111vw; /* 1595.74px */
-  top: 37.732vw; /* 724.47px */
-  width: 4.740vw; /* 91px */
-  height: 2.865vw; /* 55px */
-  z-index: 25;
-}
+
 
 /* Big bush right */
 .big-bush-right {
@@ -260,7 +314,7 @@
   top: 35.841vw; /* 688.16px */
   width: 16.388vw; /* 314.646px */
   height: 17.963vw; /* 344.901px */
-  z-index: 26;
+  z-index: 30;
 }
 
 /* Cat */
@@ -270,28 +324,95 @@
   top: 47.500vw; /* 912px */
   width: 3.307vw; /* 63.5px */
   height: 5.786vw; /* 111.104px */
-  z-index: 27;
+  z-index: 31;
+}
+
+/* Sponsor Logos Marquee */
+.sponsor-marquee {
+  position: absolute;
+  top: 55vw;
+  left: 0;
+  width: 100vw;
+  height: 5vw;
+  overflow: hidden;
+  z-index: 32;
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.sponsor-logos {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  padding: 0 2vw;
+}
+
+.sponsor-logos img {
+  height: 3vw;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Breakpoint for smaller desktop screens */
+@media (max-aspect-ratio: 16/10.1) {
+  .claude-landing-container{
+    height: 100vh;
+  }
+  .sponsor-marquee {
+    top: auto;
+    bottom: calc((100vh - 65.542vw)/2);
+    height: calc(20vh - 5vw);
+  }
+
+  .sponsor-logos {
+    gap: 5vw;
+  }
+
+  .sponsor-logos img {
+    height: calc(20vh - 5vw);
+  }
 }
 
 /* Mobile breakpoint - scale up and center convenience store */
 @media (max-width: 768px) {
   .claude-landing-container {
-    height: 85vw; /* Taller on mobile to show more content */
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5vw;
   }
 
   /* Center the convenience store on mobile */
   .convenience-store {
-    left: 2vw;
-    width: 80vw;
-    height: 42vw;
+    left: -8vw;
+    width: 100vw;
+    height: 52.5vw;
   }
 
-  /* Adjust text to stay centered with store */
-  .text-hackduke {
-    left: 18vw;
-    width: 65vw;
-    height: 10vw;
+  .ground {
+    top: 54.771vw; /* 898px */
   }
+
 
   /* Scale up important elements for mobile visibility */
   .train {
@@ -302,32 +423,123 @@
 
   .cat {
     left: 60vw;
-    width: 5vw;
-    height: 8vw;
+    top: 55vw;
+    width: 8vw;
+    height: 10vw;
   }
 
-  .open-sign {
-    left: 64vw;
-    width: 7vw;
-    height: 4vw;
-  }
-}
 
-/* Smaller mobile devices */
-@media (max-width: 480px) {
-  .claude-landing-container {
-    height: 100vw;
+
+  /* Interior positioning */
+  .interior {
+    left: 27vw;
+    top: 37vw;
+    width: 55vw;
+    height: 22vw;
   }
 
-  .convenience-store {
-    left: 5vw;
-    width: 90vw;
-    height: 47vw;
+  /* Doors container */
+  .doors-container {
+    left: 40vw;
+    top: 38vw;
+    width: 30vw;
+    height: 22vw;
   }
 
-  .text-hackduke {
-    left: 20vw;
-    width: 70vw;
-    height: 12vw;
+  .right-door {
+    left: 13vw;
+    width: 15vw;
+    height: 22vw;
+  }
+
+  .left-door {
+    left: 0;
+    width: 15vw;
+    height: 22vw;
+  }
+
+  /* DISABLE desktop hover trigger on mobile */
+  .doors-hover-trigger {
+    display: none; /* Completely hide hover trigger on mobile */
+  }
+
+  /* DISABLE hover effects on mobile */
+  .doors-hover-trigger:hover ~ .doors-container .right-door,
+  .doors-hover-trigger:hover ~ .doors-container .left-door {
+    transform: none; /* No hover animations on mobile */
+  }
+
+  /* ENABLE mobile click trigger */
+  .doors-mobile-click-trigger {
+    display: block; /* Show on mobile */
+    position: absolute;
+    left: 40vw;
+    top: 38vw;
+    width: 30vw;
+    height: 22vw;
+    z-index: 33; /* Above everything */
+    cursor: pointer;
+    background: transparent;
+  }
+
+  /* Use click/tap behavior with .open class */
+  .doors-container.open .right-door {
+    transform: translateX(100%);
+  }
+
+  .doors-container.open .left-door {
+    transform: translateX(-100%);
+  }
+
+  /* Apply now poster */
+  .apply-now-poster {
+    left: 28.4vw;
+    top: 37.8vw;
+    width: 12vw;
+    height: 14vw;
+  }
+
+  .sponsor-marquee {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 70vw;
+    margin-left: -5vw;
+    padding: 3vw 5vw;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .sponsor-marquee-track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    padding: 0;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .sponsor-logos:nth-child(2) {
+    display: none;
+  }
+
+  .sponsor-logos img {
+    height: 10vw;
+    width: auto;
+    filter: grayscale(0%) brightness(1);
+  }
+
+  .buildings{
+    width: 99.174vw; /* 1827.37px */
+    height: 50.153vw; /* 540.546px */
   }
 }
