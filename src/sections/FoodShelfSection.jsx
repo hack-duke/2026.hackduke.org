@@ -1,10 +1,17 @@
 import './FoodShelfSection.css';
-import catSvg from '../assets/Cat.svg';
-import doubleShelfSvg from '../assets/double_shelf.svg';
-import ramenGroupSvg from '../assets/ramen_group.svg';
+import bgSvg from '../assets/bg.svg';
+import catSvg from '../assets/cat.svg';
+import chalkBoardSvg from '../assets/chalk_board.svg';
+import chipsSvg from '../assets/chips.svg';
+import feb1Svg from '../assets/feb_1.svg';
+import hotFoodSvg from '../assets/hot_food.svg';
+import jan31Svg from '../assets/jan_31.svg';
+import overlaysSvg from '../assets/overlays.svg';
+import plantPotSvg from '../assets/plant_pot.svg';
 import pockySvg from '../assets/pocky.svg';
-import potatoSvg from '../assets/potato.svg';
-import shrimpSvg from '../assets/shrimp.svg';
+import ramenGroupSvg from '../assets/ramen_group.svg';
+import shelfSvg from '../assets/shelf.svg';
+import shrimpChipsSvg from '../assets/shrimp_chips.svg';
 
 export default function FoodShelfSection() {
   return (
@@ -14,31 +21,60 @@ export default function FoodShelfSection() {
       <div className="fs-row">
         <div className="fs-cell">
           <div className="fs-scene">
-            {/* Background shelf */}
-            <div className="food-item shelf-back">
-              <img src={doubleShelfSvg} alt="Double Shelf" style={{ width: '3337px', height: '1573px' }} />
+            {/* Background */}
+            <div className="food-item bg">
+              <img src={bgSvg} alt="Background" />
             </div>
 
-            {/* Food items on shelves with explicit dimensions */}
+            {/* Background shelf */}
+            <div className="food-item shelf-back">
+              <img src={shelfSvg} alt="Shelf" />
+            </div>
+
+            {/* Food items on shelves */}
             <div className="food-item ramen">
-              <img src={ramenGroupSvg} alt="Ramen" style={{ width: '578px', height: '358px' }} />
+              <img src={ramenGroupSvg} alt="Ramen" />
             </div>
 
             <div className="food-item pocky">
-              <img src={pockySvg} alt="Pocky" style={{ width: '386px', height: '284px' }} />
+              <img src={pockySvg} alt="Pocky" />
             </div>
 
             <div className="food-item potato">
-              <img src={potatoSvg} alt="Potato Chips" style={{ width: '827px', height: '454px' }} />
+              <img src={chipsSvg} alt="Potato Chips" />
             </div>
 
             <div className="food-item shrimp">
-              <img src={shrimpSvg} alt="Shrimp Chips" style={{ width: '827px', height: '454px' }} />
+              <img src={shrimpChipsSvg} alt="Shrimp Chips" />
+            </div>
+
+            <div className="food-item hot-food">
+              <img src={hotFoodSvg} alt="Hot Food" />
             </div>
 
             {/* Decorative items */}
             <div className="food-item cat">
-              <img src={catSvg} alt="Cat" style={{ width: '1057px', height: '527px' }} />
+              <img src={catSvg} alt="Cat" />
+            </div>
+
+            <div className="food-item chalk-board">
+              <img src={chalkBoardSvg} alt="Chalk Board" />
+            </div>
+
+            <div className="food-item plant-pot">
+              <img src={plantPotSvg} alt="Plant Pot" />
+            </div>
+
+            <div className="food-item jan-31">
+              <img src={jan31Svg} alt="January 31" />
+            </div>
+
+            <div className="food-item feb-1">
+              <img src={feb1Svg} alt="February 1" />
+            </div>
+
+            <div className="food-item overlays">
+              <img src={overlaysSvg} alt="Overlays" />
             </div>
           </div>
         </div>
