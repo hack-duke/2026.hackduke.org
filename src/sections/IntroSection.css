@@ -217,3 +217,56 @@
   width: 59vw;
   overflow: hidden;
 }
+
+.tracks {
+  position: absolute;
+  z-index: 6;
+  bottom: 14vw;
+  right: 23.5vw;
+  width: 9vw;
+}
+
+.tracks_symbols {
+  position: absolute;
+  z-index: 6;
+  bottom: 20.86vw;
+  right: 31.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.tracks_sign {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tracks_label {
+  height: 5.35vw;
+  z-index: 1;
+  position: relative;
+  right: -1vw;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-out;
+  opacity: 0;
+}
+
+.tracks_sign:hover .tracks_label {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.tracks_sign img:last-child {
+  width: 5.4vw;
+  position: relative;
+  z-index: 2;
+}
+
+/* .tracks_symbols > img {
+  width: 5.4vw;
+  height: auto;
+  display: block;
+} */
