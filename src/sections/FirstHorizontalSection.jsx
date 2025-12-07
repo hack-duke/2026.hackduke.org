@@ -1,4 +1,4 @@
-import './FoodShelfSection.css';
+import './FirstHorizontalSection.css';
 import bgSvg from '../assets/bg.svg';
 import catSvg from '../assets/cat.svg';
 import chalkBoardSvg from '../assets/chalk_board.svg';
