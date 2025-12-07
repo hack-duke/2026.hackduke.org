@@ -1,0 +1,169 @@
+/* Continuous horizontal strip */
+.fs-strip {
+  position: relative;
+  flex: 0 0 auto; /* don't shrink in flex parent */
+  height: 100vh;
+  min-width: 100vw;
+}
+
+.fs-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #2F3438 0%, #40464A 50%, #2F3438 100%);
+}
+
+.fs-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100vw; /* continuous viewport-width columns */
+  height: 100%;
+  align-items: center;
+}
+
+.fs-cell {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100vw;
+}
+
+/* Scene container for all food items */
+.fs-scene {
+  position: relative;
+  /* Use aspect ratio based on viewport height */
+  height: 100vh;
+  width: calc(100vh * 7680 / 1080); /* Maintain 7680:1080 aspect ratio */
+  overflow: hidden;
+}
+
+/* Food items with explicit positioning and dimensions */
+.food-item {
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.food-item img,
+.food-item svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Background */
+.bg {
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Shelf - background element */
+.shelf-back {
+  left: 25%; /* 1920/7680 */
+  top: 0%; /* -154/1080 */
+  width: 45.89%; /* 3524/7680 */
+  height: 100%; /* 1565/1080 */
+  z-index: 1;
+}
+
+/* Food items */
+.ramen {
+  left: 32.04%; /* 2461/7680 */
+  top: 45.46%; /* 491/1080 */
+  width: 10.99%; /* 844/7680 */
+  height: 33.89%; /* 366/1080 */
+  z-index: 5;
+}
+
+.pocky {
+  left: 40.52%; /* 3112/7680 */
+  top: 47.87%; /* 517/1080 */
+  width: 7.75%; /* 595.23/7680 */
+  height: 31.8%; /* 343.44/1080 */
+  z-index: 6;
+}
+
+.potato {
+  left: 47.2%; /* 3625/7680 */
+  top: 35.37%; /* 382/1080 */
+  width: 10.4%; /* 799/7680 */
+  height: 43.7%; /* 472/1080 */
+  z-index: 3;
+}
+
+.shrimp {
+  left: 56.77%; /* 4360/7680 */
+  top: 40.63%; /* 374/1080 */
+  width: 11.82%; /* 908/7680 */
+  height: 45.83%; /* 495/1080 */
+  z-index: 4;
+}
+
+/* Decorative items */
+.cat {
+  left: 50.72%; /* 3895/7680 */
+  top: 1.11%; /* 12/1080 */
+  width: 27.08%; /* 2080/7680 */
+  height: 48.8%; /* 527/1080 */
+  z-index: 7;
+}
+
+/* Hot food */
+.hot-food {
+  left: 0%;
+  top: -5.37%; /* -58/1080 */
+  width: 25%; /* 1920/7680 */
+  height: 105.37%; /* 1138/1080 */
+  z-index: 4;
+}
+
+/* Chalk board */
+.chalk-board {
+  left: 71.64%; /* 5503/7680 */
+  top: 0%; /* 41/1080 */
+  width: 28.34%; /* 2177/7680 */
+  height: 100%; /* 1039/1080 */
+  z-index: 2;
+}
+
+/* Plant pot */
+.plant-pot {
+  left: 70.39%; /* 5406/7680 */
+  top: -6.02%; /* -65/1080 */
+  width: 7.3%; /* 560.36/7680 */
+  height: 85.09%; /* 919/1080 */
+  z-index: 2;
+}
+
+/* Date indicators */
+.jan-31 {
+  left: 25.9%; /* 1989/7680 */
+  top: 16.48%; /* 178/1080 */
+  width: 3.86%; /* 296.39/7680 */
+  height: 42.62%; /* 460.28/1080 */
+  z-index: 8;
+}
+
+.feb-1 {
+  left: 66.15%; /* 5080/7680 */
+  top: 38.89%; /* 420/1080 */
+  width: 3.86%; /* 296.39/7680 */
+  height: 42.62%; /* 460.28/1080 */
+  z-index: 8;
+}
+
+/* Overlays */
+.overlays {
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+

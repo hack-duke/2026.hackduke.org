@@ -5,10 +5,10 @@ import Navbar from './components/navbar';
 import HamburgerMenu from './components/hamburgerMenu';
 import MobileMenuOverlay from './components/MobileMenuOverlay';
 
-import HorizontalScrollSection from './components/HorizontalScrollSection';
+import FoodShelfSection from './components/FoodShelfSection';
 import VerticalSection from './components/VerticalSection';
 import IntroSection from './sections/IntroSection';
-import LongHorizontalSection from './sections/LongHorizontalSection';
+import HorizontalScrollSection from './components/HorizontalScrollSection';
 import ArcadeSection from './sections/ArcadeSection';
 
 function App() {
@@ -127,7 +127,9 @@ function App() {
         </VerticalSection>
 
         {/* Section 2: First Horizontal - Sliding panels */}
-        <HorizontalScrollSection panels={panels1} />
+        <HorizontalScrollSection>
+          <FoodShelfSection/>
+        </HorizontalScrollSection>
 
 
         {/* Section 3: Arcade - Vertical */}
