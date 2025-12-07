@@ -57,6 +57,25 @@ export default function IntroSection() {
             <img src="/images/bottom slot top layer.svg" alt="" className="top_layer"/>
           </div>
         </div>
+        <img src="/images/tracks sign.svg" alt="" className="tracks"/>
+        <div className="tracks_symbols">
+          <div className="tracks_sign">
+            <img src="/images/sustainability.svg" alt="" className="tracks_label"/>
+            <img src="/images/sustainability symbol.svg" alt="" className="tracks_icon"/>
+          </div>
+          <div className="tracks_sign">
+            <img src="/images/finance.svg" alt="" className="tracks_label"/>
+            <img src="/images/finance symbol.svg" alt="" className="tracks_icon"/>
+          </div>
+          <div className="tracks_sign">
+            <img src="/images/health.svg" alt="" className="tracks_label"/>
+            <img src="/images/health symbol.svg" alt="" className="tracks_icon"/>
+          </div>
+          <div className="tracks_sign">
+            <img src="/images/interactive media.svg" alt="" className="tracks_label"/>
+            <img src="/images/media symbol.svg" alt="" className="tracks_icon"/>
+          </div>
+        </div>
       </section>
     </div>
   );
