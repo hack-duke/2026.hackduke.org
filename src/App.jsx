@@ -129,61 +129,10 @@ function App() {
         {/* Section 2: First Horizontal - Sliding panels */}
         <HorizontalScrollSection panels={panels1} />
 
-        {/* Section 3: About/Features - Vertical */}
-        <VerticalSection backgroundColor="#1a1a2e">
-          <h2>Built for Innovation</h2>
-          <p>
-            A modern approach to web scrolling that creates engaging,
-            memorable experiences for your users.
-          </p>
 
-          <div className="features-grid">
-            <div className="feature-card">
-              <span className="icon">⚡</span>
-              <h4>Performant</h4>
-              <p>Optimized with CSS transforms and passive scroll listeners for smooth 60fps animations.</p>
-            </div>
-            <div className="feature-card">
-              <span className="icon">📱</span>
-              <h4>Responsive</h4>
-              <p>Adapts seamlessly across desktop, tablet, and mobile devices with touch support.</p>
-            </div>
-            <div className="feature-card">
-              <span className="icon">🎯</span>
-              <h4>Precise</h4>
-              <p>Mathematical scroll mapping ensures accurate horizontal translation at every point.</p>
-            </div>
-            <div className="feature-card">
-              <span className="icon">🎨</span>
-              <h4>Beautiful</h4>
-              <p>Modern design with smooth transitions, shadows, and glassmorphism effects.</p>
-            </div>
-          </div>
-        </VerticalSection>
-
-        {/* Section 4: Long Horizontal - Custom children */}
-        <HorizontalScrollSection>
-          <LongHorizontalSection />
-        </HorizontalScrollSection>
-
-        {/* Section 5: Arcade - Vertical */}
+        {/* Section 3: Arcade - Vertical */}
         <VerticalSection backgroundColor="#0f0f1e" className="arcade-vertical">
           <ArcadeSection />
-        </VerticalSection>
-
-        {/* Section 6: Footer/Contact - Vertical */}
-        <VerticalSection backgroundColor="#0f0f1e">
-          <h2>Ready to Begin?</h2>
-          <p>
-            Create your own alternating scroll experience and captivate your audience
-            with this innovative approach to web design.
-          </p>
-          <button className="cta-button">Get Started</button>
-          <div className="footer-info">
-            <p style={{ marginTop: '3rem', fontSize: '1rem', opacity: 0.6 }}>
-              Built with React, Vite, and modern web technologies
-            </p>
-          </div>
         </VerticalSection>
       </div>
     </>

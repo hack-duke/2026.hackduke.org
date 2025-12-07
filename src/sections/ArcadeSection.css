@@ -231,6 +231,14 @@
   z-index: 31;
 }
 
+.arcade-sponsor-marquee {
+  position: absolute;
+  left: 0;       /* Full width from left edge */
+  top: 70.88%;   /* 3062/4320 from Figma export */
+  width: 100%;   /* Full screen width */
+  z-index: 31;
+}
+
 /* Overlays and Shading */
 .arcade-overlays {
   position: absolute;

@@ -1,128 +1,63 @@
 import './IntroSection.css';
+import { useEffect, useRef, useState } from 'react';
 
 export default function IntroSection() {
+  const [canFall, setCanFall] = useState(false);
+  const canRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (canRef.current) {
+        const rect = canRef.current.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 1.0;
+
+        if (rect.top < triggerPoint && !canFall) {
+          setCanFall(true);
+        } else if (rect.top > triggerPoint + 100 && canFall) {
+          setCanFall(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [canFall]);
+
   return (
     <div className="intro-container">
-      {/* <nav className="intro-navbar">
-        <div className="intro-brand">HackDuke</div>
-        <ul className="intro-nav-items">
-          <li>About</li>
-          <li>Tracks</li>
-          <li>Schedule</li>
-          <li>FAQ</li>
-        </ul>
-      </nav> */}
-
-      {/* <header className="intro-hero">
-        <div className="intro-hero-content">
-          <div className="intro-eyebrow">Welcome to the Future</div>
-          <h1>Scroll Beyond Limits</h1>
-          <p>
-            An extended intro section to stress-test vertical height, sticky nav,
-            and image-heavy layouts before switching to horizontal scroll.
-          </p>
-          <div className="intro-cta-row">
-            <button className="intro-cta primary">Get Tickets</button>
-            <button className="intro-cta">Learn More</button>
-          </div>
-        </div>
-      </header> */}
-
-      {/* <section className="intro-gallery">
-        {[1,2,3,4,5,6,7,8].map((n) => (
-          <figure key={n} className="intro-card">
-            <img
-              loading="lazy"
-              src={`https://picsum.photos/seed/hackduke-${n}/800/600`}
-              alt={`Gallery ${n}`}
-            />
-            <figcaption>Inspiration {n}</figcaption>
-          </figure>
-        ))}
-      </section> */}
-
-      {/* Stats strip */}
-      {/* <section className="intro-stats">
-        <div className="intro-stat">
-          <div className="intro-stat-value">2k+</div>
-          <div className="intro-stat-label">Attendees</div>
-        </div>
-        <div className="intro-stat">
-          <div className="intro-stat-value">48h</div>
-          <div className="intro-stat-label">Code + Create</div>
-        </div>
-        <div className="intro-stat">
-          <div className="intro-stat-value">$150k</div>
-          <div className="intro-stat-label">In Prizes</div>
-        </div>
-        <div className="intro-stat">
-          <div className="intro-stat-value">60+</div>
-          <div className="intro-stat-label">Workshops</div>
-        </div>
-      </section> */}
-
-      {/* Feature cards */}
-      {/* <section className="intro-features">
-        {[
-          { icon: '⚡', title: 'Performant', desc: '60fps animations with GPU-accelerated transforms.' },
-          { icon: '📱', title: 'Responsive', desc: 'Looks great on every screen and device.' },
-          { icon: '🔒', title: 'Secure', desc: 'Best practices across the stack.' },
-          { icon: '🧭', title: 'Accessible', desc: 'Inclusive, keyboard-friendly experiences.' }
-        ].map((f, i) => (
-          <article className="intro-feature" key={i}>
-            <div className="intro-feature-icon">{f.icon}</div>
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </article>
-        ))}
-      </section> */}
-
-      {/* Timeline */}
-      {/* <section className="intro-timeline">
-        {[
-          { step: 'Register', desc: 'Save your spot and join the community.' },
-          { step: 'Form Teams', desc: 'Connect with makers to build something bold.' },
-          { step: 'Hack', desc: 'Prototype, iterate, and ship your vision.' },
-          { step: 'Demo', desc: 'Showcase your work and get recognized.' }
-        ].map((t, i) => (
-          <div className="intro-timeline-item" key={i}>
-            <div className="intro-timeline-dot" />
-            <div className="intro-timeline-content">
-              <h4>{t.step}</h4>
-              <p>{t.desc}</p>
-            </div>
-          </div>
-        ))}
-      </section> */}
-
-      {/* Sponsors grid (placeholders) */}
-      {/* <section className="intro-sponsors">
-        {[...Array(10)].map((_, i) => (
-          <div className="intro-sponsor" key={i}>LOGO</div>
-        ))}
-      </section> */}
-
-      {/* <footer className="intro-footer">
-        <div className="intro-footer-inner">
-          <span>Built with React + Vite</span>
-          <span>© {new Date().getFullYear()} HackDuke</span>
-        </div>
-      </footer> */}
-
-
       <section className="down1">
+        <img src="/images/date and about.svg" alt="" className="down1-dateAbout"/>
         <img src="/images/ceiling.svg" alt="" className="down1-ceiling"/>
         <img src="/images/big sign.svg" alt="" className="down1-big_sign"/>
         <img src="/images/left sign.svg" alt="" className="down1-left_sign"/>
-        <img src="/images/right protrusion.svg" alt="" className="down1-right_protrusion"/>
-        <div className="down1-vending">
-          <img src="/images/vending1.svg" alt="" className="down1-vending-image"/>
-          <img src="/images/Card Reader.svg" alt="" className="down1-vending-card_reader"/>
+        <div className="down1-left_side">
+          <img src="/images/Lucky Cat.svg" alt="" className="down1-lucky_cat"/>
+          <img src="/images/left shelf and assets.svg" alt="" className="down1-left_shelf"/>
+          <img src="/images/lower left.svg" alt="" className="down1-lower_left"/>
         </div>
-        
+        <img src="/images/right protrusion.svg" alt="" className="down1-right_protrusion"/>
+        <div className="down1-right_side">
+          <img src="/images/clay barrels.svg" alt="" className="down1-clay_barrels"/>
+          <img src="/images/right shelf and assets.svg" alt="" className="down1-right_shelf"/>
+          <img src="/images/right shelf underneath.svg" alt="" className="down1-right_shelf_underneath"/>
+        </div>
+        <div className="down1-vending">
+          <img src="/images/CodeForGood Sign.svg" alt="" className="down1-codeforgood_sign"/>
+          <img src="/images/vending.svg" alt="" className="down1-vending-image"/>
+          <div className="down1-bottom_slot">
+            <img src="/images/bottom slot lowest layer.svg" alt="" className="lowest_layer"/>
+            <img
+              ref={canRef}
+              src="/images/START POSITION.svg"
+              alt=""
+              className={`start-position ${canFall ? 'falling' : ''}`}
+            />
+            <img src="/images/bottom slot top layer.svg" alt="" className="top_layer"/>
+          </div>
+        </div>
       </section>
     </div>
-
-    
   );
 }

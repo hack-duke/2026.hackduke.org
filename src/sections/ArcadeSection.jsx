@@ -1,4 +1,5 @@
 import './ArcadeSection.css';
+import { SponsorsMarquee } from '../components/SponsorsMarquee';
 
 export default function ArcadeSection() {
   return (
@@ -38,7 +39,9 @@ export default function ArcadeSection() {
 
         {/* Sponsor section */}
         <img src="/src/assets/sponsor placeholder.svg" alt="2025 Sponsors" className="arcade-sponsor-placeholder" />
-        <img src="/src/assets/SPONSOR LOGOS.svg" alt="Sponsor Logos" className="arcade-sponsor-logos" />
+        <div className="arcade-sponsor-marquee">
+          <SponsorsMarquee />
+        </div>
 
         {/* Overlays and shading */}
         <img src="/src/assets/OVERLAYS.svg" alt="" className="arcade-overlays" />
