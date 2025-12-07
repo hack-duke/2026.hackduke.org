@@ -1,0 +1,38 @@
+.hamburger-trigger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 34px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;  
+  z-index: 1100;
+}
+
+.hamburger-trigger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.hamburger-trigger.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.hamburger-trigger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-trigger.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Show hamburger on narrow screens */
+@media (max-width: 699px) {
+  .hamburger-trigger {
+    display: flex;
+  }
+}

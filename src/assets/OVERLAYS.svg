@@ -1,0 +1,11 @@
+<svg width="1920" height="4320" viewBox="0 0 1920 4320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:overlay">
+<rect width="1920" height="4320" transform="matrix(-1 0 0 1 1920 0)" fill="url(#paint0_linear_1389_4)" fill-opacity="0.2"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1389_4" x1="960" y1="4320" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#51C2C0"/>
+<stop offset="1" stop-color="#FFBC35"/>
+</linearGradient>
+</defs>
+</svg>
