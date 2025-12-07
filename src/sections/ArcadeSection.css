@@ -3,8 +3,7 @@
 
 .arcade-container {
   width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   background: #1a1a1a;
   padding-bottom: calc((4320 / 1920) * 100%); /* Aspect ratio padding trick */
@@ -121,6 +120,17 @@
   width: 19.15%; /* 149/778 from Figma export */
   height: auto;
   z-index: 4;
+  transform-origin: top center;
+  animation: clawSwing 3s ease-in-out infinite;
+}
+
+@keyframes clawSwing {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 .claw-window-frame {

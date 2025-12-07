@@ -167,7 +167,7 @@ function App() {
         </HorizontalScrollSection>
 
         {/* Section 5: Arcade - Vertical */}
-        <VerticalSection backgroundColor="#0f0f1e">
+        <VerticalSection backgroundColor="#0f0f1e" className="arcade-vertical">
           <ArcadeSection />
         </VerticalSection>
 

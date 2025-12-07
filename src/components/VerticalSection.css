@@ -25,6 +25,18 @@
   width: 100%;
 }
 
+/* Override for arcade section - full bleed with no padding */
+.vertical-section.arcade-vertical {
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.vertical-section.arcade-vertical .vertical-content {
+  max-width: none;
+  width: 100%;
+}
+
 .vertical-content {
   max-width: 1200px;
   width: 100%;
