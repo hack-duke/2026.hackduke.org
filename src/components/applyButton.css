@@ -13,12 +13,11 @@
   height: auto;
 }
 
-.apply-button-app { /* This still need fixing */
-  position: absolute;
-  top: 6.5vw;
+.apply-button-app {
   background: none;
   border: none;
   cursor: pointer;
+  display: block;
 }
 
 .apply-button-app img {

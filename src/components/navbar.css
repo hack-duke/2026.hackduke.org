@@ -83,28 +83,23 @@
 
 .apply-container {
   position: absolute;
-  top: 80px; 
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.apply-bg {
-  width: 150px; 
-  height: auto;
+  top: -1vw;
+  z-index: 0;
+  width: 12vw;
+  right: 10vw;
 }
 
 .apply-button {
   position: absolute;
-  background: none;
-  border: none;
   cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -16%);
+  width: 10vw;
 }
 
 .apply-button img {
-  width: 100px;
-  height: auto;
+  width: 10vw;
 }
 
 @media (max-width: 699px) {

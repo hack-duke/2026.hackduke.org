@@ -4,11 +4,11 @@ import applyText from '../assets/applyText.svg';
 
 export default function ApplyButton({ className = '' }) {
   return (
-    <div className={`apply-container-app ${className}`}>
-      <img src={applyBg} alt="Apply Background" className="apply-bg-app" />
-      <button className="apply-button-app">
-        <img src={applyText} alt="Apply" />
-      </button>
+    <div className={`apply-container ${className}`}>
+      <img src={applyBg} alt="" className="apply-bg" />
+      <a href="/apply">
+        <img src={applyText} alt="Apply" className="apply-button"/>
+      </a>
     </div>
   );
 }
