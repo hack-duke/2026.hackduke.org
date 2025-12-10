@@ -30,7 +30,7 @@ export default function IntroSection() {
 
   useEffect(() => {
     if (canFall) {
-      // Slide out tracks one at a time during the fall animation
+      // Slide out tracks one at a time during the Can Falling animation
       const slideOutTimeouts = [];
       for (let i = 0; i < 4; i++) {
         slideOutTimeouts.push(
@@ -118,7 +118,7 @@ export default function IntroSection() {
             {/* if this track label has already slid into view + user hovers over it, reset the timer of how long before label slides in*/}
             <img src="/images/sustainability.svg" alt="" className={`tracks_label ${activeTracks.has(0) || animatingTracks.has(0) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
             
-            {/* if user hovers over track icon, slide the track label out */}
+            {/* slide the track label out if 1) user hovers over it or 2) we're showing users to click on the track icon */}
             <img src="/images/sustainability symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
           </div>
           <div className="tracks_sign">
