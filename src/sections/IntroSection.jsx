@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function IntroSection() {
   const [canFall, setCanFall] = useState(false);
   const [activeTracks, setActiveTracks] = useState(new Set());
+  const [animatingTracks, setAnimatingTracks] = useState(new Set());
   const canRef = useRef(null);
   const timeoutRef = useRef({});
 
@@ -25,6 +26,39 @@ export default function IntroSection() {
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
+  }, [canFall]);
+
+  useEffect(() => {
+    if (canFall) {
+      // Slide out tracks one at a time during the fall animation
+      const slideOutTimeouts = [];
+      for (let i = 0; i < 4; i++) {
+        slideOutTimeouts.push(
+          setTimeout(() => {
+            setAnimatingTracks(prev => new Set(prev).add(i));
+          }, i * 200) // 200ms delay between each track
+        );
+      }
+
+      // Slide them back in after the fall completes (1.25s) + a delay
+      const slideBackDelay = 1250 + 200; // After fall animation + buffer
+      const slideInTimeouts = [];
+      for (let i = 0; i < 4; i++) {
+        slideInTimeouts.push(
+          setTimeout(() => {
+            setAnimatingTracks(prev => {
+              const newSet = new Set(prev);
+              newSet.delete(i);
+              return newSet;
+            });
+          }, slideBackDelay + i * 200)
+        );
+      }
+
+      return () => {
+        [...slideOutTimeouts, ...slideInTimeouts].forEach(timeout => clearTimeout(timeout));
+      };
+    }
   }, [canFall]);
 
   const handleTrackMouseEnter = (trackIndex) => {
@@ -82,21 +116,21 @@ export default function IntroSection() {
         <div className="tracks_symbols">
           <div className="tracks_sign">  
             {/* if this track label has already slid into view + user hovers over it, reset the timer of how long before label slides in*/}
-            <img src="/images/sustainability.svg" alt="" className={`tracks_label ${activeTracks.has(0) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
+            <img src="/images/sustainability.svg" alt="" className={`tracks_label ${activeTracks.has(0) || animatingTracks.has(0) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
             
             {/* if user hovers over track icon, slide the track label out */}
             <img src="/images/sustainability symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/finance.svg" alt="" className={`tracks_label ${activeTracks.has(1) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
+            <img src="/images/finance.svg" alt="" className={`tracks_label ${activeTracks.has(1) || animatingTracks.has(1) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
             <img src="/images/finance symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/health.svg" alt="" className={`tracks_label ${activeTracks.has(2) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
+            <img src="/images/health.svg" alt="" className={`tracks_label ${activeTracks.has(2) || animatingTracks.has(2) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
             <img src="/images/health symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/interactive media.svg" alt="" className={`tracks_label ${activeTracks.has(3) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
+            <img src="/images/interactive media.svg" alt="" className={`tracks_label ${activeTracks.has(3) || animatingTracks.has(3) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
             <img src="/images/media symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
           </div>
         </div>
