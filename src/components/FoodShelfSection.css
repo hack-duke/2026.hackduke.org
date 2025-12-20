@@ -147,8 +147,6 @@
   width: 3.86%; /* 296.39/7680 */
   height: 42.62%; /* 460.28/1080 */
   z-index: 8;
-  transform-origin: top center; /* Pivot from top for hanging effect */
-  will-change: transform;
 }
 
 .feb-1 {
@@ -157,8 +155,6 @@
   width: 3.86%; /* 296.39/7680 */
   height: 42.62%; /* 460.28/1080 */
   z-index: 8;
-  transform-origin: top center; /* Pivot from top for hanging effect */
-  will-change: transform;
 }
 
 /* Overlays */
