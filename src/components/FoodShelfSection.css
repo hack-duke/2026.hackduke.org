@@ -124,10 +124,10 @@
 
 /* Chalk board */
 .chalk-board {
-  left: 71.64%; /* 5503/7680 */
-  top: 0%; /* 41/1080 */
-  width: 28.34%; /* 2177/7680 */
-  height: 100%; /* 1039/1080 */
+  left: 71%; /* 5503/7680 */
+  top: 4%; /* 41/1080 */
+  height: 92%; /* 1039/1080 */
+  aspect-ratio: 2116 / 998;
   z-index: 2;
 }
 
@@ -165,5 +165,30 @@
   height: 100%;
   z-index: 10;
   pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Signs */
+.sign-1 {
+  left: 33.1%;
+  top: 4%;
+  height: 45%;
+  aspect-ratio: 860 / 408;
+  z-index: 9;
+}
+
+.sign-2 {
+  left: 50%;
+  top: 50%;
+  height: 45%;
+  aspect-ratio: 860 / 408;
+  z-index: 9;
+}
+
+.schedule-sign {
+  left: 10.82%;
+  top: 10%;
+  height: 13%;
+  aspect-ratio: 835 / 142;
+  z-index: 9;
 }
 

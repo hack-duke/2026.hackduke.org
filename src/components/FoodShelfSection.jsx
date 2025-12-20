@@ -1,7 +1,7 @@
 import './FoodShelfSection.css';
 import bgSvg from '../assets/horizontal-bg.svg';
 import catSvg from '../assets/cat.svg';
-import chalkBoardSvg from '../assets/chalk_board.svg';
+import chalkBoardSvg from '../assets/chalk_board2.svg';
 import chipsSvg from '../assets/chips.svg';
 import feb1Svg from '../assets/feb_1.svg';
 import hotFoodSvg from '../assets/hot_food.svg';
@@ -12,6 +12,9 @@ import pockySvg from '../assets/pocky.svg';
 import ramenGroupSvg from '../assets/ramen_group.svg';
 import shelfSvg from '../assets/shelf.svg';
 import shrimpChipsSvg from '../assets/shrimp_chips.svg';
+import sign1Svg from '../assets/sign 1.svg';
+import sign2Svg from '../assets/sign 2.svg';
+import scheduleSignSvg from '../assets/schedule sign.svg';
 
 export default function FoodShelfSection() {
   return (
@@ -75,6 +78,18 @@ export default function FoodShelfSection() {
 
             <div className="food-item overlays">
               <img src={overlaysSvg} alt="Overlays" />
+            </div>
+
+            <div className="food-item sign-1">
+              <img src={sign1Svg} alt="Sign 1" />
+            </div>
+
+            <div className="food-item sign-2">
+              <img src={sign2Svg} alt="Sign 2" />
+            </div>
+
+            <div className="food-item schedule-sign">
+              <img src={scheduleSignSvg} alt="Schedule Sign" />
             </div>
           </div>
         </div>
