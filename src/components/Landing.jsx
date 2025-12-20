@@ -38,11 +38,40 @@ import roblox from '../assets/landing/sponsorlogos/roblox.svg';
 import turbo from '../assets/landing/sponsorlogos/turbo.svg';
 import vipplay from '../assets/landing/sponsorlogos/vipplay.svg';
 
-export default function Landing() {
+export default function Landing({ onEnter }) {
   const [doorsOpen, setDoorsOpen] = useState(false);
+  const [doorsFullyOpen, setDoorsFullyOpen] = useState(false);
+  const doorAnimationDuration = 600; // 0.6s in milliseconds
 
   const toggleDoors = () => {
     setDoorsOpen(!doorsOpen);
+
+    // For mobile, mark doors as fully open after animation
+    if (!doorsOpen) {
+      setTimeout(() => {
+        setDoorsFullyOpen(true);
+      }, doorAnimationDuration);
+    } else {
+      setDoorsFullyOpen(false);
+    }
+  };
+
+  // Handle hover events on desktop
+  const handleHoverStart = () => {
+    // After animation completes, mark doors as fully open
+    setTimeout(() => {
+      setDoorsFullyOpen(true);
+    }, doorAnimationDuration);
+  };
+
+  const handleHoverEnd = () => {
+    setDoorsFullyOpen(false);
+  };
+
+  const handleTriggerClick = () => {
+    if (doorsFullyOpen && onEnter) {
+      onEnter();
+    }
   };
 
   return (
@@ -99,10 +128,20 @@ export default function Landing() {
       <img src={interior} alt="" className="interior" />
 
       {/* Invisible hover trigger for doors - DESKTOP ONLY - must come before doors in DOM */}
-      <div className="doors-hover-trigger"></div>
+      <div
+        className="doors-hover-trigger"
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
+        onClick={handleTriggerClick}
+        style={{ cursor: doorsFullyOpen ? 'pointer' : 'default' }}
+      ></div>
 
       {/* Mobile-only click trigger */}
-      <div className="doors-mobile-click-trigger" onClick={toggleDoors}></div>
+      <div
+        className="doors-mobile-click-trigger"
+        onClick={doorsOpen ? handleTriggerClick : toggleDoors}
+        style={{ cursor: (doorsOpen && doorsFullyOpen) ? 'pointer' : 'default' }}
+      ></div>
 
       {/* Doors Container */}
       <div className={`doors-container ${doorsOpen ? 'open' : ''}`}>
