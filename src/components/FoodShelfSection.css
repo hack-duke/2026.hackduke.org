@@ -192,3 +192,16 @@
   z-index: 9;
 }
 
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .sign-1, .sign-2 {
+    height: 30%;
+  }
+
+  .chalk-board {
+    left: 77%;
+    top: 15%;
+    height: 65%;
+}
+}
+
