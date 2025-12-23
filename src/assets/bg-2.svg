@@ -75,6 +75,7 @@
 <rect y="3240" width="1920" height="1080" fill="url(#paint10_linear_258_484)" fill-opacity="0.5"/>
 <rect y="3240" width="1920" height="1080" fill="url(#paint11_linear_258_484)" fill-opacity="0.6"/>
 <rect y="3240" width="1920" height="1080" fill="#786954" fill-opacity="0.35"/>
+<rect width="1920" height="760" fill="#292B2C"/>
 <defs>
 <linearGradient id="paint0_linear_258_484" x1="150" y1="-1.40839e-05" x2="1770.5" y2="1020.5" gradientUnits="userSpaceOnUse">
 <stop offset="0.0288462" stop-color="#786954" stop-opacity="0.5"/>
