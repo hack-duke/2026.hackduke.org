@@ -6,7 +6,7 @@ export default function ApplyButton({ className = '' }) {
   return (
     <div className={`apply-container ${className}`}>
       <img src={applyBg} alt="" className="apply-bg"/>
-      <a href="/apply">
+      <a href="https://portal.hackduke.org/">
         <img src={applyText} alt="Apply" className="apply-button"/>
       </a>
     </div>
