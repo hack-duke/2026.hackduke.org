@@ -25,7 +25,7 @@ export default function ArcadeSection() {
           <img src="/src/assets/window frame.svg" alt="" className="claw-window-frame" />
           <img src="/src/assets/controls.svg" alt="Controls" className="claw-controls" />
           <img src="/src/assets/round controller thing.svg" alt="Round controller" className="claw-round-controller" />
-          <img src="/src/assets/FAQ.svg" alt="FAQ" className="claw-faq-overlay" />
+          <img id="faqs" alt="FAQ" className="claw-faq-overlay" src="/src/assets/FAQ.svg" />
         </div>
 
         {/* Stack of gatcha - overlaps red arcade */}
