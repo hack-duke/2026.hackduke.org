@@ -128,9 +128,9 @@ function App() {
 
         {/* Section 2: First Horizontal - Sliding panels */}
         <div id="schedule">
-        <HorizontalScrollSection>
-          <FoodShelfSection/>
-        </HorizontalScrollSection>
+          <HorizontalScrollSection>
+            <FoodShelfSection/>
+          </HorizontalScrollSection>
         </div>
 
 

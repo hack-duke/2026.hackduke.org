@@ -83,7 +83,7 @@ export default function IntroSection() {
   return (
     <div className="intro-container">
       <section className="down1">
-        <img src="/images/date and about.svg" alt="" className="down1-dateAbout"/>
+        <img id="about" alt="" className="down1-dateAbout" src="/images/date and about.svg" />
         <img src="/images/ceiling.svg" alt="" className="down1-ceiling"/>
         <img src="/images/big sign.svg" alt="" className="down1-big_sign"/>
         <img src="/images/left sign.svg" alt="" className="down1-left_sign"/>
@@ -112,7 +112,7 @@ export default function IntroSection() {
             <img src="/images/bottom slot top layer.svg" alt="" className="top_layer"/>
           </div>
         </div>
-        <img src="/images/tracks sign.svg" alt="" className="tracks"/>
+        <img id="tracks" src="/images/tracks sign.svg" alt="" className="tracks"/>
         <div className="tracks_symbols">
           <div className="tracks_sign">  
             {/* if this track label has already slid into view + user hovers over it, reset the timer of how long before label slides in*/}
