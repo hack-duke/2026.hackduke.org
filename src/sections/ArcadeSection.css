@@ -224,7 +224,7 @@
 .claw-faq-questions {
   position: absolute;
   left: 12.72%;  /* Align with FAQ sign */
-  top: 100%;      /* Below the FAQ sign */
+  top: 108%;      /* Below the FAQ sign */
   width: 83.68%; /* Same width as FAQ sign */
   max-height: 120%; /* Limit height to prevent overflow */
   overflow-y: auto;
