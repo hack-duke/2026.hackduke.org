@@ -169,6 +169,7 @@ export default function Landing({ onEnter }) {
       {/* Sponsor Logos Marquee */}
       <div className="sponsor-marquee">
         <div className="sponsor-marquee-track">
+          {/* First set */}
           <div className="sponsor-logos">
             <img src={brightData} alt="Bright Data" />
             <img src={figma} alt="Figma" />
@@ -178,7 +179,7 @@ export default function Landing({ onEnter }) {
             <img src={turbo} alt="Turbo" />
             <img src={vipplay} alt="VIPPlay" />
           </div>
-          {/* Duplicate for seamless loop */}
+          {/* Exact duplicate for seamless loop - MUST be identical */}
           <div className="sponsor-logos">
             <img src={brightData} alt="Bright Data" />
             <img src={figma} alt="Figma" />

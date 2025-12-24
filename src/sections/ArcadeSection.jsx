@@ -1,5 +1,7 @@
 import './ArcadeSection.css';
 import { SponsorsMarquee } from '../components/SponsorsMarquee';
+import Accordion from '../components/Accordion';
+import { FAQ_QUESTIONS } from '../constants/faqQuestions';
 
 export default function ArcadeSection() {
   return (
@@ -11,6 +13,13 @@ export default function ArcadeSection() {
         {/* Floor base */}
         <img src="/src/assets/floor.svg" alt="" className="arcade-floor" />
         <img src="/src/assets/floor lines.svg" alt="" className="arcade-floor-lines" />
+
+        {/* Shadows for depth */}
+        <div className="arcade-shadow arcade-shadow-1"></div>
+        <div className="arcade-shadow arcade-shadow-2"></div>
+        <div className="arcade-shadow arcade-shadow-3"></div>
+        <div className="arcade-shadow arcade-shadow-4"></div>
+        <div className="arcade-shadow arcade-shadow-5"></div>
 
         {/* Main arcade machines */}
         <img src="/src/assets/cat arcade design - blue.svg" alt="Blue arcade machine" className="arcade-machine arcade-blue" />
@@ -25,7 +34,12 @@ export default function ArcadeSection() {
           <img src="/src/assets/window frame.svg" alt="" className="claw-window-frame" />
           <img src="/src/assets/controls.svg" alt="Controls" className="claw-controls" />
           <img src="/src/assets/round controller thing.svg" alt="Round controller" className="claw-round-controller" />
-          <img src="/src/assets/FAQ.svg" alt="FAQ" className="claw-faq-overlay" />
+          <img src="/src/assets/FAQ.svg" alt="FAQ" className="claw-faq-sign" />
+
+          {/* FAQ Accordion */}
+          <div className="claw-faq-questions">
+            <Accordion items={FAQ_QUESTIONS} />
+          </div>
         </div>
 
         {/* Stack of gatcha - overlaps red arcade */}
@@ -34,7 +48,6 @@ export default function ArcadeSection() {
         {/* Foreground elements */}
         <img src="/src/assets/stairs cat.svg" alt="Cat on stairs" className="arcade-cat" />
         <img src="/src/assets/box stack.svg" alt="Box stack" className="arcade-boxes" />
-        <img src="/src/assets/stool.svg" alt="Stool" className="arcade-stool-left" />
         <img src="/src/assets/stool-2.svg" alt="Stool" className="arcade-stool-right" />
 
         {/* Sponsor section */}

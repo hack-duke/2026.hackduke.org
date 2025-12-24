@@ -14,7 +14,7 @@ import ArcadeSection from './sections/ArcadeSection';
 function App() {
   // header / mobile menu state & scroll-hide behavior
   const [showHeader, setShowHeader] = useState(true);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(true);
   const lastScrollY = useRef(0);
 
   useEffect(() => {

@@ -28,6 +28,54 @@
   object-fit: cover;
 }
 
+/* Shadow Elements for depth */
+.arcade-shadow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.arcade-shadow-1 {
+  left: 26.2%;   /* 503/1920 */
+  top: 3.22%;    /* 139/4320 */
+  width: 48.02%; /* 922/1920 */
+  height: 41.02%; /* 1772/4320 */
+  z-index: 8;    /* Behind arcade machines, above floor */
+}
+
+.arcade-shadow-2 {
+  left: 54.53%;  /* 1047/1920 */
+  top: -0.83%;   /* -36/4320 */
+  width: 77.71%; /* 1492/1920 */
+  height: 52.69%; /* 2276/4320 */
+  z-index: 8;
+}
+
+.arcade-shadow-3 {
+  left: 65.31%;  /* 1254/1920 */
+  top: 1.69%;    /* 73/4320 */
+  width: 72.34%; /* 1389/1920 */
+  height: 49.26%; /* 2128/4320 */
+  z-index: 8;
+}
+
+.arcade-shadow-4 {
+  left: 71.46%;  /* 1372/1920 */
+  top: 21.27%;   /* 919/4320 */
+  width: 53.44%; /* 1026/1920 */
+  height: 50.9%; /* 2199/4320 */
+  z-index: 8;
+}
+
+.arcade-shadow-5 {
+  left: 41.2%;   /* 791/1920 */
+  top: 52.45%;   /* 2266/4320 */
+  width: 35.26%; /* 677/1920 */
+  height: 9.63%; /* 416/4320 */
+  z-index: 8;
+}
+
 /* Floor Elements */
 .arcade-floor {
   position: absolute;
@@ -58,37 +106,40 @@
 }
 
 .arcade-blue {
-  left: 28.33%;  /* 544/1920 from Figma export */
-  top: 6.81%;    /* 294/4320 from Figma export */
-  width: 37.92%; /* 728/1920 from Figma export */
+  left: 28.33%;  /* 544/1920 - overlaps with claw machine */
+  top: 6.76%;    /* 292/4320 from Figma */
+  width: 37.86%; /* 726.92/1920 from Figma */
+  z-index: 10;   /* Above claw machine container (z-index: 9) */
 }
 
 .arcade-green {
   left: 48.75%;  /* 936/1920 from Figma export */
   top: 8.59%;    /* 371/4320 from Figma export */
   width: 37.08%; /* 712/1920 from Figma export */
+  z-index: 11;   /* Above blue arcade */
 }
 
 .arcade-red {
   left: 65.21%;  /* 1252/1920 from Figma export */
   top: 5.95%;    /* 257/4320 */
   width: 34.79%; /* 668/1920 from Figma export */
+  z-index: 11;   /* Same level as green */
 }
 
 /* Claw Machine Container */
 .arcade-claw-machine-container {
   position: absolute;
-  left: 0%;        /* 0/1920 */
+  left: 0%;        /* 0/1920 - Leftmost position */
   top: 7.34%;      /* 317/4320 */
   width: 40.54%;   /* 778.41/1920 */
   height: 32.41%;  /* 1399.96/4320 */
-  z-index: 11;
+  z-index: 9;      /* Behind blue arcade machine but visible on left */
 }
 
 /* Claw Machine Components (positioned relative to container) */
 .claw-cabinet-base {
   position: absolute;
-  left: 9.25%;   /* 72/778 from Figma export - relative to container */
+  left: 9.25%;   /* 72/778 - cabinet starts after cable */
   top: 0%;
   width: 90.74%; /* 706/778 from Figma export */
   height: auto;
@@ -106,18 +157,18 @@
 
 .claw-cable {
   position: absolute;
-  left: 0%;
-  top: 0.07%;    /* 1/1400 from Figma export */
-  width: 9.9%;   /* 77/778 from Figma export */
+  left: 0%;      /* 0/778 - Left edge as border */
+  top: 0.066%;   /* (317.93-317)/1399.96 */
+  width: 9.38%;  /* 73/778 from Figma */
   height: auto;
   z-index: 3;
 }
 
 .claw-mechanism {
   position: absolute;
-  left: 44.99%;  /* 350/778 from Figma export */
-  top: 13.79%;   /* 193/1400 from Figma export */
-  width: 19.15%; /* 149/778 from Figma export */
+  left: 44.99%;  /* (350.1-0)/778 from Figma */
+  top: 13.81%;   /* (510.36-317)/1399.96 from Figma */
+  width: 19.14%; /* 148.908/778 from Figma */
   height: auto;
   z-index: 4;
   transform-origin: top center;
@@ -135,44 +186,71 @@
 
 .claw-window-frame {
   position: absolute;
-  left: 14.52%;  /* 113/778 from Figma export */
-  top: 13.79%;   /* 193/1400 from Figma export */
-  width: 80.08%; /* 623/778 from Figma export */
+  left: 14.57%;  /* (113.38-0)/778 from Figma */
+  top: 13.81%;   /* (510.36-317)/1399.96 from Figma */
+  width: 80.01%; /* 622.52/778 from Figma */
   height: auto;
   z-index: 5;
 }
 
 .claw-controls {
   position: absolute;
-  left: 16.45%;  /* 128/778 from Figma export */
-  top: 46.36%;   /* 649/1400 from Figma export */
-  width: 76.22%; /* 593/778 from Figma export */
+  left: 16.45%;  /* (128.01-0)/778 from Figma */
+  top: 46.34%;   /* (965.71-317)/1399.96 from Figma */
+  width: 76.24%; /* 593.251/778 from Figma */
   height: auto;
   z-index: 6;
 }
 
 .claw-round-controller {
   position: absolute;
-  left: 72.75%;  /* 566/778 from Figma export */
-  top: 40.57%;   /* 568/1400 from Figma export */
-  width: 10.41%; /* 81/778 from Figma export */
+  left: 72.73%;  /* (565.91-0)/778 from Figma */
+  top: 40.59%;   /* (885.22-317)/1399.96 from Figma */
+  width: 10.41%; /* 81.05/778 from Figma */
   height: auto;
   z-index: 6;
 }
 
-.claw-faq-overlay {
+.claw-faq-sign {
   position: absolute;
-  left: 20.05%;  /* 156/778 from Figma - relative to claw container */
-  top: 70.29%;   /* (1301-317)/1400 from Figma - relative to claw container */
-  width: 58.35%; /* 454/778 from Figma - relative to claw container */
+  left: 12.72%;  /* (99-0)/778 from Figma */
+  top: 69.25%;   /* (1286.46-317)/1399.96 from Figma */
+  width: 83.68%; /* 651/778 from Figma */
   height: auto;
   z-index: 7;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  pointer-events: none; /* Don't block clicks on questions below */
 }
 
-.claw-faq-overlay:hover {
-  transform: scale(1.05);
+.claw-faq-questions {
+  position: absolute;
+  left: 12.72%;  /* Align with FAQ sign */
+  top: 108%;      /* Below the FAQ sign */
+  width: 83.68%; /* Same width as FAQ sign */
+  max-height: 120%; /* Limit height to prevent overflow */
+  overflow-y: auto;
+  z-index: 7;
+  color: white;
+  font-size: 3vw;
+  padding: 1.5vw;
+}
+
+/* Scrollbar styling for FAQ questions */
+.claw-faq-questions::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.claw-faq-questions::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.15vw;
+}
+
+.claw-faq-questions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0.15vw;
+}
+
+.claw-faq-questions::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* Foreground Props */

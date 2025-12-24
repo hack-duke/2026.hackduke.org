@@ -355,7 +355,8 @@
   display: flex;
   align-items: center;
   gap: 4vw;
-  padding: 0 2vw;
+  padding: 0 2vw; /* Small edge padding */
+  flex-shrink: 0; /* Prevent compression */
 }
 
 .sponsor-logos img {
