@@ -1,7 +1,7 @@
 export const FAQ_QUESTIONS = [
   {
     title: "When? Where?",
-    content: "HackDuke: Code for Good will take place February 8-9, 2026 at Duke University's campus in Durham, NC."
+    content: "HackDuke: Code for Good will take place Jan 31 - Feb 1, 2026 at Duke University's campus in Durham, NC."
   },
   {
     title: "What can I make?",
@@ -33,6 +33,6 @@ export const FAQ_QUESTIONS = [
   },
   {
     title: "When is the application deadline?",
-    content: "Applications will close on January 31st, 2026 at 11:59 PM ET. Decisions will be released shortly after."
+    content: "Priority Deadline is January 1, 2026. Applications close on January 16, 2026"
   }
 ];

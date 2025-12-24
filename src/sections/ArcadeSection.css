@@ -224,29 +224,29 @@
 .claw-faq-questions {
   position: absolute;
   left: 12.72%;  /* Align with FAQ sign */
-  top: 85%;      /* Below the FAQ sign */
+  top: 100%;      /* Below the FAQ sign */
   width: 83.68%; /* Same width as FAQ sign */
-  max-height: 60%; /* Limit height to prevent overflow */
+  max-height: 120%; /* Limit height to prevent overflow */
   overflow-y: auto;
   z-index: 7;
   color: white;
-  font-size: 0.85rem;
-  padding: 1rem;
+  font-size: 3vw;
+  padding: 1.5vw;
 }
 
 /* Scrollbar styling for FAQ questions */
 .claw-faq-questions::-webkit-scrollbar {
-  width: 6px;
+  width: 0.3vw;
 }
 
 .claw-faq-questions::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  border-radius: 0.15vw;
 }
 
 .claw-faq-questions::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
+  border-radius: 0.15vw;
 }
 
 .claw-faq-questions::-webkit-scrollbar-thumb:hover {
