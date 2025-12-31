@@ -360,7 +360,7 @@
 }
 
 .sponsor-logos img {
-  height: 3vw;
+  height: 4vw;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%) brightness(0.8);

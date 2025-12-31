@@ -29,14 +29,8 @@ import trainDoorWindows from '../assets/landing/train door windows.svg';
 import openSign from '../assets/landing/open sign.svg';
 import cat from '../assets/landing/cat.svg';
 import ground from '../assets/landing/ground.svg'
-// Sponsor logos
-import brightData from '../assets/landing/sponsorlogos/bright data.svg';
-import figma from '../assets/landing/sponsorlogos/figma.svg';
-import hrt from '../assets/landing/sponsorlogos/hrt.svg';
-import iid from '../assets/landing/sponsorlogos/iid.svg';
-import roblox from '../assets/landing/sponsorlogos/roblox.svg';
-import turbo from '../assets/landing/sponsorlogos/turbo.svg';
-import vipplay from '../assets/landing/sponsorlogos/vipplay.svg';
+// Dynamically import all sponsor logos
+const sponsorLogos = import.meta.glob('../assets/sponsors/*.svg', { eager: true, import: 'default' });
 
 export default function Landing({ onEnter }) {
   const [doorsOpen, setDoorsOpen] = useState(false);
@@ -171,23 +165,15 @@ export default function Landing({ onEnter }) {
         <div className="sponsor-marquee-track">
           {/* First set */}
           <div className="sponsor-logos">
-            <img src={brightData} alt="Bright Data" />
-            <img src={figma} alt="Figma" />
-            <img src={hrt} alt="HRT" />
-            <img src={iid} alt="IID" />
-            <img src={roblox} alt="Roblox" />
-            <img src={turbo} alt="Turbo" />
-            <img src={vipplay} alt="VIPPlay" />
+            {Object.values(sponsorLogos).map((logo, i) => (
+              <img key={i} src={logo} alt="Sponsor" />
+            ))}
           </div>
-          {/* Exact duplicate for seamless loop - MUST be identical */}
+          {/* Duplicate for seamless loop */}
           <div className="sponsor-logos">
-            <img src={brightData} alt="Bright Data" />
-            <img src={figma} alt="Figma" />
-            <img src={hrt} alt="HRT" />
-            <img src={iid} alt="IID" />
-            <img src={roblox} alt="Roblox" />
-            <img src={turbo} alt="Turbo" />
-            <img src={vipplay} alt="VIPPlay" />
+            {Object.values(sponsorLogos).map((logo, i) => (
+              <img key={`dup-${i}`} src={logo} alt="Sponsor" />
+            ))}
           </div>
         </div>
       </div>
