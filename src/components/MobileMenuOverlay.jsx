@@ -28,6 +28,7 @@ export default function MobileMenuOverlay({ onClose, onToggle, open }) {
           <li><a href="#tracks" onClick={onClose}>Tracks</a></li>
           <li><a href="#schedule" onClick={onClose}>Schedule</a></li>
           <li><a href="#faqs" onClick={onClose}>FAQ</a></li>
+          <li><a href="#sponsors" onClick={onClose}>Sponsors</a></li>
           <li><a href="https://portal.hackduke.org/">Apply</a></li>
         </ul>
       </nav>
