@@ -39,11 +39,14 @@
 
 .navbar-buttons {
   position: absolute;
-  top: 3vw;
-  left: 0;
+  top: 2vw;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   z-index: 2;
   display: flex;
   gap: 0px;
+  height: 6vw;
 }
 
 /*
@@ -55,12 +58,9 @@
   */
 
 .home-button {
-  margin-left: 1vw;
-  margin-right: 0.5vw;
-}
-
-.home-button img{
-  margin-top: 0.5vw;
+  margin-left: 1.5vw;
+  margin-right: 1vw;
+  width: 3.5vw;
 }
 
 .navbar-button {
@@ -84,28 +84,22 @@
 
 .apply-container {
   position: absolute;
-  top: 80px; 
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.apply-bg {
-  width: 150px; 
-  height: auto;
+  z-index: 0;
+  top: -1vw;
+  z-index: 0;
+  width: 12vw;
+  right: 10vw;
 }
 
 .apply-button {
   position: absolute;
+  cursor: pointer;
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 .apply-button img {
-  width: 100px;
-  height: auto;
+  width: 10vw;
 }
 
 @media (max-width: 699px) {

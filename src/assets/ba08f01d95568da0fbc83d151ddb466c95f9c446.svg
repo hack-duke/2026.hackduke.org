@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 81.0502 119.381" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="round controller thing">
+<path id="Rectangle 288" d="M39.8206 38.8385L50.369 41.1303L11.2581 114.538L0 114.538L39.8206 38.8385Z" fill="var(--fill-0, #333638)"/>
+<path id="Rectangle 287" d="M39.8215 38.8365L44.1782 41.1283L5.0673 114.536L0.000898292 114.536L39.8215 38.8365Z" fill="var(--fill-0, #40464A)"/>
+<g id="controller ball">
+<circle id="Ellipse 32" cx="51.5002" cy="29.5501" r="29.55" fill="var(--fill-0, #BF3C3D)"/>
+<circle id="Ellipse 31" cx="51.5006" cy="29.5495" r="25.0424" fill="var(--fill-0, #E64A4B)"/>
+<ellipse id="Ellipse 33" cx="56.6861" cy="19.6144" rx="12.7041" ry="10.7326" transform="rotate(21.2329 56.6861 19.6144)" fill="var(--fill-0, #FF7D7E)"/>
+</g>
+</g>
+</svg>

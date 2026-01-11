@@ -1,0 +1,7 @@
+[build]
+  command = "rm -rf node_modules package-lock.json && npm install && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20.19.0"
+  NPM_FLAGS = "--legacy-peer-deps"

@@ -1,0 +1,568 @@
+.landing-container {
+  position: relative;
+  width: 100vw;
+  height: 62.542vw; /* 1124px */
+  overflow: hidden;
+  background: #425e70;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sky gradient backgrounds */
+.sunset-bg-2 {
+  position: absolute;
+  left: -0.104vw; /* -2px */
+  top: -0.469vw; /* -9px */
+  width: 102.031vw; /* 1959px */
+  height: 25.469vw; /* 489px */
+  background: linear-gradient(to top, #f6cd6f, #0c2a66);
+  z-index: 1;
+}
+
+.sunset-bg-1 {
+  position: absolute;
+  left: -0.104vw;
+  top: -0.469vw;
+  width: 102.031vw;
+  height: 25.469vw;
+  background: linear-gradient(to top, #f28c62, #aa6f7d);
+  z-index: 2;
+}
+
+/* Sunset effects */
+.cool-sunset-effect-2 {
+  position: absolute;
+  left: 7.396vw; /* 142px */
+  top: -14.063vw; /* -270px */
+  width: 87.708vw; /* 1684px */
+  height: 55.833vw; /* 1072px */
+  z-index: 3;
+}
+
+.cool-sunset-effect-1 {
+  position: absolute;
+  left: 7.396vw;
+  top: -14.063vw;
+  width: 87.708vw;
+  height: 55.833vw;
+  z-index: 4;
+}
+
+.yellowish-sunset-left {
+  position: absolute;
+  left: -32.969vw; /* -633px */
+  top: -9.948vw; /* -191px */
+  width: 87.760vw; /* 1685px */
+  height: 55.833vw; /* 1072px */
+  z-index: 5;
+}
+
+.yellowish-sunset-right {
+  position: absolute;
+  left: 51.563vw; /* 990px */
+  top: -6.927vw; /* -133px */
+  width: 87.760vw;
+  height: 55.833vw;
+  z-index: 6;
+}
+
+/* Concrete ground */
+.concrete-ground {
+  position: absolute;
+  left: -4.688vw; /* -90px */
+  top: 40.990vw; /* 787px */
+  width: 123.229vw; /* 2366px */
+  height: 30.365vw; /* 583px */
+  background-color: #425e70;
+  z-index: 7;
+}
+
+/* Clouds */
+.clouds {
+  position: absolute;
+  left: -2.222vw; /* -42.66px */
+  top: -5.443vw; /* -104.5px */
+  width: 102.982vw; /* 1977.26px */
+  height: 21.126vw; /* 405.622px */
+  z-index: 8;
+}
+
+/* Buildings */
+.buildings {
+  position: absolute;
+  left: .004vw; /* -1.69px */
+  top: .0001vw; /* 28.61px */
+  width: 95.174vw; /* 1827.37px */
+  height: 50.153vw; /* 540.546px */
+  z-index: 9;
+}
+
+
+
+/* Cool sunset effect behind */
+.cool-sunset-behind {
+  position: absolute;
+  left: 21.354vw; /* 410px */
+  top: 1.250vw; /* 24px */
+  width: 87.708vw; /* 1684px */
+  height: 55.781vw; /* 1071px */
+  z-index: 11;
+}
+
+/* Bushes behind train */
+.bushes-behind-train {
+  position: absolute;
+  left: -0.052vw; /* -1px */
+  top: 19.206vw; /* 368.75px */
+  width: 47.063vw; /* 903.6px */
+  height: 12.224vw; /* 234.703px */
+  z-index: 12;
+}
+
+/* Power line */
+.power-line {
+  position: absolute;
+  left: -0.052vw; /* -1px */
+  top: 10.945vw; /* 210.14px */
+  width: 42.188vw; /* 810px */
+  height: 31.354vw; /* 602px */
+  z-index: 13;
+}
+
+/* Train */
+.train {
+  position: absolute;
+  left: -2.865vw; /* -55px */
+  top: 23.119vw; /* 443.89px */
+  width: 51.054vw; /* 980.244px */
+  height: 25.885vw; /* 497.008px */
+  z-index: 14;
+}
+
+.train-door-windows {
+  position: absolute;
+  left: 16.927vw; /* 325px */
+  top: 30.694vw; /* 589.33px */
+  width: 15.573vw; /* 299px */
+  height: 4.531vw; /* 87px */
+  z-index: 15;
+}
+
+/* Fence */
+.fence {
+  position: absolute;
+  left: 0vw;
+  top: 34.161vw; /* 655.89px */
+  width: 45.875vw; /* 804px */
+  height: 25.417vw; /* 392px */
+  z-index: 16;
+}
+
+/* Ground vectors */
+.ground {
+  position: absolute;
+  left: -2.760vw; /* -53px */
+  top: 46.771vw; /* 898px */
+  width: 109.531vw; /* 2103px */
+  height: 11.771vw; /* 226px */
+  z-index: 17;
+}
+
+
+/* Big bush left */
+.big-bush-left {
+  position: absolute;
+  left: 25.859vw; /* 496.5px */
+  top: 35.266vw; /* 657.91px */
+  width: 15.548vw; /* 298.511px */
+  height: 17.226vw; /* 330.746px */
+  z-index: 21;
+}
+
+/* Boxes */
+.boxes {
+  position: absolute;
+  left: 29.326vw; /* 563.06px */
+  top: 45.190vw; /* 867.67px */
+  width: 12.186vw; /* 233.968px */
+  height: 9.563vw; /* 145.221px */
+  z-index: 22;
+}
+
+/* Interior */
+.interior {
+  position: absolute;
+  left: 49.740vw; /* 955px */
+  top: 33.229vw; /* 638px */
+  width: 41.094vw; /* 789px */
+  height: 17.188vw; /* 330px */
+  z-index: 20;
+}
+
+/* Doors Container */
+.doors-container {
+  position: absolute;
+  left: 59.2vw;
+  top: 33.245vw; /* 638.299px */
+  width: 21.703vw; /* Both doors combined width */
+  height: 18.333vw; /* 352px */
+  z-index: 21;
+}
+
+/* Right Door */
+.right-door {
+  position: absolute;
+  left: 10.713vw; /* Offset within container */
+  top: 0;
+  width: 10.990vw; /* 211px */
+  height: 18.333vw; /* 352px */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Left Door */
+.left-door {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10.990vw; /* 211px */
+  height: 18.333vw; /* 352px */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Invisible hover trigger - DESKTOP ONLY - sits on top to detect hover */
+.doors-hover-trigger {
+  position: absolute;
+  left: 59.2vw;
+  top: 33.245vw; /* 638.299px */
+  width: 21.703vw; /* Both doors combined width */
+  height: 18.333vw; /* 352px */
+  z-index: 33; /* Above everything */
+  cursor: pointer;
+  /* Make it invisible but still detect hover */
+  background: transparent;
+}
+
+/* When hovering the trigger, animate the doors - DESKTOP ONLY */
+.doors-hover-trigger:hover ~ .doors-container .right-door {
+  transform: translateX(100%);
+}
+
+.doors-hover-trigger:hover ~ .doors-container .left-door {
+  transform: translateX(-100%);
+}
+
+/* Mobile click trigger - MOBILE ONLY - hidden by default */
+.doors-mobile-click-trigger {
+  display: none; /* Hidden on desktop */
+}
+
+/* Apply Now Poster Button */
+.apply-now-poster {
+  position: absolute;
+  left: 49.844vw; /* 957px */
+  top: 33.385vw; /* 641px */
+  width: 8.776vw; /* 168.5px */
+  height: 10.038vw; /* 192.72px */
+  z-index: 27;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  outline: none; /* Remove outline on click/focus */
+}
+
+.apply-now-poster:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+.apply-now-poster img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.apply-now-poster:hover {
+  transform: scale(1.1);
+}
+
+.apply-now-poster:active {
+  transform: scale(1.05);
+}
+
+/* Convenience store */
+.convenience-store {
+  position: absolute;
+  left: 20.765vw; /* 398.68px */
+  top: 14.411vw; /* 276.7px */
+  width: 79.271vw; /* 1522px */
+  height: 41.875vw; /* 804px */
+  z-index: 23;
+}
+
+/* Text (HackDuke - code for good) */
+.text-hackduke {
+  position: absolute;
+  left: 38.906vw; /* 746.6px */
+  top: 16.510vw; /* 317px */
+  width: 61.146vw; /* 1174px */
+  height: 9.896vw; /* 190px */
+  z-index: 28;
+}
+
+
+
+/* Big bush right */
+.big-bush-right {
+  position: absolute;
+  left: 88.511vw; /* 1795.42px */
+  top: 36.841vw; /* 688.16px */
+  width: 16.388vw; /* 314.646px */
+  height: 17.963vw; /* 344.901px */
+  z-index: 30;
+}
+
+/* Cat */
+.cat {
+  position: absolute;
+  left: 76.875vw; /* 1476px */
+  top: 47.500vw; /* 912px */
+  width: 3.307vw; /* 63.5px */
+  height: 5.786vw; /* 111.104px */
+  z-index: 31;
+}
+
+/* Sponsor Logos Marquee */
+.sponsor-marquee {
+  position: absolute;
+  top: 55vw;
+  left: 0;
+  width: 100vw;
+  height: 5vw;
+  overflow: hidden;
+  z-index: 32;
+  display: flex;
+  align-items: center;
+}
+
+.sponsor-marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.sponsor-logos {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  padding: 0 2vw; /* Small edge padding */
+  flex-shrink: 0; /* Prevent compression */
+}
+
+.sponsor-logos img {
+  height: 4vw;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.sponsor-logos img:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Breakpoint for smaller desktop screens */
+@media (max-aspect-ratio: 16/10.1) {
+  .landing-container{
+    height: 100vh;
+  }
+  .sponsor-marquee {
+    top: auto;
+    bottom: calc((100vh - 65.542vw)/2);
+    height: calc(20vh - 5vw);
+  }
+
+  .sponsor-logos {
+    gap: 5vw;
+  }
+
+  .sponsor-logos img {
+    height: calc(20vh - 5vw);
+  }
+}
+
+/* Mobile breakpoint - scale up and center convenience store */
+@media (max-width: 768px) {
+  .landing-container {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5vw;
+  }
+
+  /* Center the convenience store on mobile */
+  .convenience-store {
+    left: -8vw;
+    width: 100vw;
+    height: 52.5vw;
+  }
+
+  .ground {
+    top: 54.771vw; /* 898px */
+    left: -6.760vw; /* -53px */
+
+  }
+
+
+  /* Scale up important elements for mobile visibility */
+  .train {
+    left: -5vw;
+    width: 60vw;
+    height: 30vw;
+  }
+
+  .cat {
+    left: 60vw;
+    top: 55vw;
+    width: 8vw;
+    height: 10vw;
+  }
+
+
+
+  /* Interior positioning */
+  .interior {
+    left: 27vw;
+    top: 37vw;
+    width: 55vw;
+    height: 22vw;
+  }
+
+  /* Doors container */
+  .doors-container {
+    left: 40vw;
+    top: 38vw;
+    width: 30vw;
+    height: 22vw;
+  }
+
+  .right-door {
+    left: 13vw;
+    width: 15vw;
+    height: 22vw;
+  }
+
+  .left-door {
+    left: 0;
+    width: 15vw;
+    height: 22vw;
+  }
+
+  /* DISABLE desktop hover trigger on mobile */
+  .doors-hover-trigger {
+    display: none; /* Completely hide hover trigger on mobile */
+  }
+
+  /* DISABLE hover effects on mobile */
+  .doors-hover-trigger:hover ~ .doors-container .right-door,
+  .doors-hover-trigger:hover ~ .doors-container .left-door {
+    transform: none; /* No hover animations on mobile */
+  }
+
+  /* ENABLE mobile click trigger */
+  .doors-mobile-click-trigger {
+    display: block; /* Show on mobile */
+    position: absolute;
+    left: 40vw;
+    top: 38vw;
+    width: 30vw;
+    height: 22vw;
+    z-index: 33; /* Above everything */
+    cursor: pointer;
+    background: transparent;
+  }
+
+  /* Use click/tap behavior with .open class */
+  .doors-container.open .right-door {
+    transform: translateX(100%);
+  }
+
+  .doors-container.open .left-door {
+    transform: translateX(-100%);
+  }
+
+  /* Apply now poster */
+  .apply-now-poster {
+    left: 28.4vw;
+    top: 37.8vw;
+    width: 12vw;
+    height: 14vw;
+  }
+
+  .sponsor-marquee {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 70vw;
+    margin-left: -5vw;
+    padding: 3vw 5vw;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .sponsor-marquee-track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    padding: 0;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .sponsor-logos:nth-child(2) {
+    display: none;
+  }
+
+  .sponsor-logos img {
+    height: 10vw;
+    width: auto;
+    filter: grayscale(0%) brightness(1);
+  }
+
+  .buildings{
+    width: 100.174vw; /* 1827.37px */
+    height: 50.153vw; /* 540.546px */
+  }
+
+  .big-bush-left {
+    left: 2.859vw; /* 496.5px */
+    top: 44.266vw; /* 657.91px */
+  }
+
+  .big-bush-right {
+    display: none;
+  }
+  .boxes {
+    left: 5.326vw; /* 563.06px */
+    top: 55.190vw; /* 867.67px */
+    width: 12.186vw; /* 233.968px */
+    height: 9.563vw; /* 145.221px */
+  }
+}

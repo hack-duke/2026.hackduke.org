@@ -5,16 +5,16 @@ import Navbar from './components/navbar';
 import HamburgerMenu from './components/hamburgerMenu';
 import MobileMenuOverlay from './components/MobileMenuOverlay';
 
-import HorizontalScrollSection from './components/HorizontalScrollSection';
+import FoodShelfSection from './components/FoodShelfSection';
 import VerticalSection from './components/VerticalSection';
 import IntroSection from './sections/IntroSection';
-import LongHorizontalSection from './sections/LongHorizontalSection';
+import HorizontalScrollSection from './components/HorizontalScrollSection';
 import ArcadeSection from './sections/ArcadeSection';
 
 function App() {
   // header / mobile menu state & scroll-hide behavior
   const [showHeader, setShowHeader] = useState(true);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(true);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -122,12 +122,16 @@ function App() {
 
       <div className="app">
         {/* Section 1: Hero/Intro - Vertical */}
-        <VerticalSection backgroundColor="#0f0f1e" className="intro-vertical">
-          <IntroSection />
+        <VerticalSection backgroundColor="#0f0f1e" className="intro-vertical" id="home">
+          <IntroSection id="about"/>
         </VerticalSection>
 
         {/* Section 2: First Horizontal - Sliding panels */}
-        <HorizontalScrollSection panels={panels1} />
+        <div id="schedule">
+          <HorizontalScrollSection>
+            <FoodShelfSection/>
+          </HorizontalScrollSection>
+        </div>
 
 
         {/* Section 3: Arcade - Vertical */}

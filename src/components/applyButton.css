@@ -1,32 +1,37 @@
-.apply-container-app {
+.apply-container {
   position: absolute;
+  top: 0;
+  right: 11vw;
+  width: 11vw;
+  height: auto;
+  z-index: 0;
+}
+
+.apply-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.apply-container a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 0;
-  top: 5vw;
-  right: 3vw;
 }
 
-.apply-bg-app {
-  width: 10vw;
+.apply-button {
+  width: 85%;
   height: auto;
-}
-
-.apply-button-app { /* This still need fixing */
-  position: absolute;
-  top: 6.5vw;
-  background: none;
-  border: none;
   cursor: pointer;
+  top: 7.05vw;
 }
 
-.apply-button-app img {
-  width: 7vw;
-  height: auto;
-}
-
-.apply-container-app.mobile-inline {
+.apply-container.mobile-inline {
   position: static;
   top: auto;
   right: auto;
@@ -37,10 +42,10 @@
   z-index: 2;
 }
 
-.apply-container-app.mobile-inline .apply-bg-app {
+.apply-container.mobile-inline .apply-bg {
   width: 100px;
 }
 
-.apply-container-app.mobile-inline .apply-button-app img {
+.apply-container.mobile-inline .apply-button {
   width: 68px;
 }

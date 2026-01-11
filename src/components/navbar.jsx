@@ -22,7 +22,7 @@ export default function Navbar({ className = '' }) {
     <div className={`navbar-container ${className}`}>
       <img src={navbarBg} alt="Navbar Background" className="navbar-bg" />
       <div className="navbar-buttons">
-        <NavbarButton imageSrc={homeButton} alt="Home" url="https://hackduke.org/" className='home-button'/>
+        <NavbarButton imageSrc={homeButton} alt="Home" url="/" className='home-button'/>
         <NavbarButton imageSrc={aboutNavbar} alt="About" url="#about" />
         <NavbarButton imageSrc={tracksNavbar} alt="Tracks" url="#tracks" />
         <NavbarButton imageSrc={scheduleNavbar} alt="Schedule" url="#schedule" />

@@ -1,0 +1,183 @@
+import React, { useState } from 'react';
+import './Landing.css';
+
+// Import all SVG assets from landing folder
+import sunsetBg1 from '../assets/landing/sunset bg 1.svg';
+import sunsetBg2 from '../assets/landing/sunset bg 2.svg';
+import coolSunsetEffect1 from '../assets/landing/cool sunset effect 1.svg';
+import coolSunsetEffect2 from '../assets/landing/cool sunset effect 2.svg';
+import coolSunsetEffectBehind from '../assets/landing/cool sunset effect - behind.svg';
+import yellowishSunsetLeft from '../assets/landing/yellowish sunset effect - left side.svg';
+import yellowishSunsetRight from '../assets/landing/yellowish sunset effect - right side.svg';
+import concrete from '../assets/landing/concrete .svg';
+import clouds from '../assets/landing/clouds.svg';
+import buildings from '../assets/landing/buildings.svg';
+import bushesBehindTrain from '../assets/landing/bushes behind train.svg';
+import powerLine from '../assets/landing/power line.svg';
+import train from '../assets/landing/train.svg';
+import fence from '../assets/landing/fence.svg';
+import bigBush from '../assets/landing/left bush.svg';
+import rightBush from '../assets/landing/right bush.svg';
+import boxes from '../assets/landing/boxes.svg';
+import convenienceStore from '../assets/landing/convenience store -building.svg';
+import interior from '../assets/landing/INTERIOR.svg';
+import leftDoor from '../assets/landing/LEFT DOOR.svg';
+import rightDoor from '../assets/landing/RIGHT DOOR.svg';
+import applyNowPoster from '../assets/landing/apply now poster.svg';
+import text from '../assets/landing/text.svg';
+import trainDoorWindows from '../assets/landing/train door windows.svg';
+import openSign from '../assets/landing/open sign.svg';
+import cat from '../assets/landing/cat.svg';
+import ground from '../assets/landing/ground.svg'
+// Dynamically import all sponsor logos
+const sponsorLogos = import.meta.glob('../assets/sponsors/*.svg', { eager: true, import: 'default' });
+
+export default function Landing({ onEnter }) {
+  const [doorsOpen, setDoorsOpen] = useState(false);
+  const [doorsFullyOpen, setDoorsFullyOpen] = useState(false);
+  const doorAnimationDuration = 600; // 0.6s in milliseconds
+
+  const toggleDoors = () => {
+    setDoorsOpen(!doorsOpen);
+
+    // For mobile, mark doors as fully open after animation
+    if (!doorsOpen) {
+      setTimeout(() => {
+        setDoorsFullyOpen(true);
+      }, doorAnimationDuration);
+    } else {
+      setDoorsFullyOpen(false);
+    }
+  };
+
+  // Handle hover events on desktop
+  const handleHoverStart = () => {
+    // After animation completes, mark doors as fully open
+    setTimeout(() => {
+      setDoorsFullyOpen(true);
+    }, doorAnimationDuration);
+  };
+
+  const handleHoverEnd = () => {
+    setDoorsFullyOpen(false);
+  };
+
+  const handleTriggerClick = () => {
+    if (doorsFullyOpen && onEnter) {
+      onEnter();
+    }
+  };
+
+  return (
+    <div className="landing-container">
+      {/* Sky gradients */}
+      <div className="sunset-bg-2"></div>
+      <div className="sunset-bg-1"></div>
+
+      {/* Sunset effects */}
+      <img src={coolSunsetEffect2} alt="" className="cool-sunset-effect-2" />
+      <img src={coolSunsetEffect1} alt="" className="cool-sunset-effect-1" />
+      <img src={yellowishSunsetLeft} alt="" className="yellowish-sunset-left" />
+      <img src={yellowishSunsetRight} alt="" className="yellowish-sunset-right" />
+
+      {/* Concrete ground */}
+      <div className="concrete-ground"></div>
+
+      {/* Clouds */}
+      <img src={clouds} alt="" className="clouds" />
+
+      {/* Buildings */}
+      <img src={buildings} alt="" className="buildings" />
+
+
+      {/* Sunset effect behind */}
+      <img src={coolSunsetEffectBehind} alt="" className="cool-sunset-behind" />
+
+      {/* Bushes behind train */}
+      <img src={bushesBehindTrain} alt="" className="bushes-behind-train" />
+
+      {/* Power lines */}
+      <img src={powerLine} alt="" className="power-line" />
+
+      {/* Train */}
+      <img src={train} alt="" className="train" />
+      <img src={trainDoorWindows} alt="" className="train-door-windows" />
+
+      {/* Fence */}
+      <img src={fence} alt="" className="fence" />
+
+      {/* Ground vectors */}
+      <img src={ground} alt="" className="ground" />
+
+      {/* Big bush left */}
+      <img src={bigBush} alt="" className="big-bush-left" />
+
+      {/* Boxes */}
+      <img src={boxes} alt="" className="boxes" />
+
+      {/* Convenience store */}
+      <img src={convenienceStore} alt="" className="convenience-store" />
+
+      {/* Interior */}
+      <img src={interior} alt="" className="interior" />
+
+      {/* Invisible hover trigger for doors - DESKTOP ONLY - must come before doors in DOM */}
+      <div
+        className="doors-hover-trigger"
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
+        onClick={handleTriggerClick}
+        style={{ cursor: doorsFullyOpen ? 'pointer' : 'default' }}
+      ></div>
+
+      {/* Mobile-only click trigger */}
+      <div
+        className="doors-mobile-click-trigger"
+        onClick={doorsOpen ? handleTriggerClick : toggleDoors}
+        style={{ cursor: (doorsOpen && doorsFullyOpen) ? 'pointer' : 'default' }}
+      ></div>
+
+      {/* Doors Container */}
+      <div className={`doors-container ${doorsOpen ? 'open' : ''}`}>
+        {/* Left Door */}
+        <img src={leftDoor} alt="" className="left-door" />
+
+        {/* Right Door */}
+        <img src={rightDoor} alt="" className="right-door" />
+      </div>
+
+      {/* Apply Now Poster Button */}
+      <a href="https://portal.hackduke.org/" className="apply-now-poster" aria-label="Apply Now" target="_blank" rel="noopener noreferrer">
+        <img src={applyNowPoster} alt="Apply Now" />
+      </a>
+
+      {/* Open sign */}
+      <img src={openSign} alt="" className="open-sign" />
+
+      {/* Big bush right */}
+      <img src={rightBush} alt="" className="big-bush-right" />
+
+      {/* Cat */}
+      <img src={cat} alt="" className="cat" />
+
+      {/* Sponsor Logos Marquee */}
+      <div className="sponsor-marquee">
+        <div className="sponsor-marquee-track">
+          {/* First set */}
+          <div className="sponsor-logos">
+            {Object.values(sponsorLogos).map((logo, i) => (
+              <img key={i} src={logo} alt="Sponsor" />
+            ))}
+          </div>
+          {/* Duplicate for seamless loop */}
+          <div className="sponsor-logos">
+            {Object.values(sponsorLogos).map((logo, i) => (
+              <img key={`dup-${i}`} src={logo} alt="Sponsor" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+}

@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 593.252 250.474" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="controls">
+<path id="under" d="M46.2043 250.474H545.977L578.617 222.331H14.6341L46.2043 250.474Z" fill="var(--fill-0, #094965)"/>
+<rect id="Rectangle 282" y="102.441" width="593.251" height="14.0714" fill="var(--fill-0, #146374)"/>
+<rect id="Rectangle 283" x="14.6341" y="116.512" width="563.983" height="105.817" fill="var(--fill-0, #146374)"/>
+<rect id="Rectangle 284" width="563.983" height="9.00572" transform="matrix(1 0 0 -1 14.6341 125.518)" fill="var(--fill-0, #094965)"/>
+<path id="board" d="M33.7714 0H558.917L593.251 102.44H0L33.7714 0Z" fill="var(--fill-0, #2B8194)"/>
+<g id="round controller base">
+<path id="Rectangle 290" d="M396.531 14.0724H487.151L498.127 70.921H393.998L396.531 14.0724Z" fill="var(--fill-0, #146374)"/>
+<path id="Rectangle 288" d="M399.91 16.3234H484.338L493.062 65.8548H397.94L399.91 16.3234Z" fill="var(--fill-0, #333638)"/>
+<path id="Rectangle 289" d="M404.412 19.9831H480.117L486.589 57.6945H403.272L404.412 19.9831Z" fill="var(--fill-0, #40464A)"/>
+<ellipse id="Ellipse 34" cx="443.812" cy="34.3345" rx="12.6643" ry="5.62857" fill="var(--fill-0, #333638)"/>
+</g>
+</g>
+</svg>
