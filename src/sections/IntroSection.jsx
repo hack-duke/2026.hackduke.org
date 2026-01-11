@@ -4,9 +4,15 @@ import { useEffect, useRef, useState } from 'react';
 export default function IntroSection() {
   const [canFall, setCanFall] = useState(false);
   const [activeTracks, setActiveTracks] = useState(new Set());
-  const [animatingTracks, setAnimatingTracks] = useState(new Set());
+  const [peekingTracks, setPeekingTracks] = useState(new Set());
+  const [isIdle, setIsIdle] = useState(true);
   const canRef = useRef(null);
   const timeoutRef = useRef({});
+  let TRACK_SLIDE_DELAY = 1000; //change this to change how fast track slides back in
+  
+  useEffect(() => {
+    setIsIdle(activeTracks.size === 0);
+  }, [activeTracks]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,45 +34,18 @@ export default function IntroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [canFall]);
 
-  useEffect(() => {
-    if (canFall) {
-      // Slide out tracks one at a time during the Can Falling animation
-      const slideOutTimeouts = [];
-      for (let i = 0; i < 4; i++) {
-        slideOutTimeouts.push(
-          setTimeout(() => {
-            setAnimatingTracks(prev => new Set(prev).add(i));
-          }, i * 200) // 200ms delay between each track
-        );
-      }
-
-      // Slide them back in after the fall completes (1.25s) + a delay
-      const slideBackDelay = 1250 + 200; // After fall animation + buffer
-      const slideInTimeouts = [];
-      for (let i = 0; i < 4; i++) {
-        slideInTimeouts.push(
-          setTimeout(() => {
-            setAnimatingTracks(prev => {
-              const newSet = new Set(prev);
-              newSet.delete(i);
-              return newSet;
-            });
-          }, slideBackDelay + i * 200)
-        );
-      }
-
-      return () => {
-        [...slideOutTimeouts, ...slideInTimeouts].forEach(timeout => clearTimeout(timeout));
-      };
-    }
-  }, [canFall]);
-
+  // hovering over a track label causes it to be active (slide into view)
   const handleTrackMouseEnter = (trackIndex) => {
-    // Hovering over a track label causes it to be active (slide into view)
-    if (timeoutRef.current[trackIndex]) clearTimeout(timeoutRef.current[trackIndex]);
-    if (!activeTracks.has(trackIndex)){
-       setActiveTracks(prev => new Set(prev).add(trackIndex));
-    }
+    setPeekingTracks(new Set());
+    setIsIdle(false);
+
+  if (timeoutRef.current[trackIndex]) {
+    clearTimeout(timeoutRef.current[trackIndex]);
+  }
+  
+  if (!activeTracks.has(trackIndex)){
+    setActiveTracks(prev => new Set(prev).add(trackIndex));
+  }
   };
 
   const handleTrackMouseLeave = (trackIndex) => {
@@ -77,8 +56,64 @@ export default function IntroSection() {
         newSet.delete(trackIndex);
         return newSet;
       });
-    }, 2000);
+    }, TRACK_SLIDE_DELAY);
   };
+
+  // function that makes the tracks peek out a little one by one 
+ const runPeekSequence = () => {
+  const timeouts = [];
+  const PEEK_DURATION = 600;
+  const STAGGER = 90;
+
+  setPeekingTracks(new Set());
+
+  for (let i = 0; i < 4; i++) {
+    const start = i * STAGGER;
+
+    timeouts.push(
+      setTimeout(() => {
+        setPeekingTracks(prev => new Set(prev).add(i));
+      }, start)
+    );
+
+    timeouts.push(
+      setTimeout(() => {
+        setPeekingTracks(prev => {
+          const ns = new Set(prev);
+          ns.delete(i);
+          return ns;
+        });
+      }, start + PEEK_DURATION)
+    );
+  }
+
+  return timeouts;
+};
+
+
+  //if user not hovering over any tracks, play peeking animation to draw their eye to it
+  useEffect(() => {
+    if (!isIdle) return;
+
+    let peekTimeouts = [];
+    let intervalId;
+
+    const startPeekLoop = () => {
+      peekTimeouts = runPeekSequence();
+    };
+
+    // Run immediately
+    startPeekLoop();
+
+    // Then repeat every 3s
+    intervalId = setInterval(startPeekLoop, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+      peekTimeouts.forEach(clearTimeout);
+      setPeekingTracks(new Set());
+    };
+  }, [isIdle]);
 
   return (
     <div className="intro-container">
@@ -116,21 +151,21 @@ export default function IntroSection() {
         <div className="tracks_symbols">
           <div className="tracks_sign">  
             {/* if this track label has already slid into view + user hovers over it, reset the timer of how long before label slides in*/}
-            <img src="/images/sustainability.svg" alt="" className={`tracks_label ${activeTracks.has(0) || animatingTracks.has(0) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
+            <img src="/images/sustainability.svg" alt="" className={`tracks_label ${activeTracks.has(0) ? 'active' : peekingTracks.has(0) ? 'peek' : ''}`} onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
             
             {/* slide the track label out if 1) user hovers over it or 2) we're showing users to click on the track icon */}
             <img src="/images/sustainability symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(0)} onMouseLeave={() => handleTrackMouseLeave(0)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/finance.svg" alt="" className={`tracks_label ${activeTracks.has(1) || animatingTracks.has(1) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
+            <img src="/images/finance.svg" alt="" className={`tracks_label ${activeTracks.has(1) ? 'active' : peekingTracks.has(1) ? 'peek' : ''}`} onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
             <img src="/images/finance symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(1)} onMouseLeave={() => handleTrackMouseLeave(1)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/health.svg" alt="" className={`tracks_label ${activeTracks.has(2) || animatingTracks.has(2) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
+            <img src="/images/health.svg" alt="" className={`tracks_label ${activeTracks.has(2) ? 'active' : peekingTracks.has(2) ? 'peek' : ''}`} onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
             <img src="/images/health symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(2)} onMouseLeave={() => handleTrackMouseLeave(2)}/>
           </div>
           <div className="tracks_sign">
-            <img src="/images/interactive media.svg" alt="" className={`tracks_label ${activeTracks.has(3) || animatingTracks.has(3) ? 'active' : ''}`} onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
+            <img src="/images/interactive media.svg" alt="" className={`tracks_label ${activeTracks.has(3) ? 'active' : peekingTracks.has(3) ? 'peek' : ''}`} onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
             <img src="/images/media symbol.svg" alt="" className="tracks_icon" onMouseEnter={() => handleTrackMouseEnter(3)} onMouseLeave={() => handleTrackMouseLeave(3)}/>
           </div>
         </div>
