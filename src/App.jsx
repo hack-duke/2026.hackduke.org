@@ -118,7 +118,7 @@ function App() {
           <img src={countdownSvg} alt="" className="countdown-background" />
           <div className="countdown-text">
             <Countdown
-              date={new Date('2026-01-17T00:00:00')}
+              date={new Date('2026-01-16T00:00:00')}
               renderer={(props) => (
                 <CountdownRenderer {...props} deadlineType="Applications" />
               )}
