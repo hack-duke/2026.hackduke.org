@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
+import Countdown from 'react-countdown';
+import CountdownRenderer from './components/CountdownRenderer';
+import countdownSvg from './assets/countdown.svg';
 
 import Navbar from './components/navbar';
 import HamburgerMenu from './components/hamburgerMenu';
@@ -108,6 +111,19 @@ function App() {
         <div className="header-items">
           <Navbar className="desktop-only" />
           <HamburgerMenu open={mobileOpen} onToggle={() => setMobileOpen(o => !o)} />
+        </div>
+
+        {/* Countdown - positioned below navbar */}
+        <div className="countdown-container">
+          <img src={countdownSvg} alt="" className="countdown-background" />
+          <div className="countdown-text">
+            <Countdown
+              date={new Date('2026-01-16T00:00:00')}
+              renderer={(props) => (
+                <CountdownRenderer {...props} deadlineType="Applications" />
+              )}
+            />
+          </div>
         </div>
       </div>
 

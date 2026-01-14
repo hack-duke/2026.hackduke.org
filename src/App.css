@@ -38,6 +38,47 @@
   gap: 0.75rem;
 }
 
+/* Countdown Container - anchored below navbar */
+.countdown-container {
+  position: absolute;
+  left: 53%;
+  top: 7vw;
+  transform: translateX(-50%);
+  width: 24.635vw; /* 473px at 1920px viewport */
+  height: 3.750vw; /* 72px at 1920px viewport */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.countdown-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.countdown-text {
+  position: relative;
+  z-index: 36;
+  color: white;
+  font-size: 1.1vw;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  font-family: 'Antonio', sans-serif;
+}
+
+.hero-countdown p {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
 /* Hide / show states stay the same */
 .sticky-header.show {
   transform: translateX(-50%) translateY(0);
@@ -193,6 +234,11 @@ button {
     position: relative;
     top: 0.75rem;
     left: 0.75rem;
+  }
+
+  /* Hide countdown on mobile */
+  .countdown-container {
+    display: none;
   }
 }
 
