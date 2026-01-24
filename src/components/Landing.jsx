@@ -171,7 +171,7 @@ export default function Landing({ onEnter }) {
       </div>
 
       {/* Apply Now Poster Button */}
-      <a href="#" className="apply-now-poster" aria-label="Apply Now" target="_blank" rel="noopener noreferrer">
+      <a href="#" className="apply-now-poster" aria-label="Apply Now" rel="noopener noreferrer">
         <img src={applyNowPoster} alt="Apply Now" />
       </a>
 
