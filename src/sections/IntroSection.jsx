@@ -83,8 +83,9 @@ export default function IntroSection() {
   return (
     <div className="intro-container">
       <section className="down1">
+        <img src="/images/OVERLAYS1.svg" alt="" className="down1-overlay" />
         <img id="about" alt="" className="down1-dateAbout" src="/images/date and about.svg" />
-        <img src="/images/ABOUT.svg" alt="" className="down1-dateAbout"/>
+        <img src="/images/ABOUT.svg" alt="" className="down1-About"/>
         <img src="/images/DATE.svg" alt="" className="down1-date"/>
         <img src="/images/ceiling.svg" alt="" className="down1-ceiling"/>
         <img src="/images/big sign.svg" alt="" className="down1-big_sign"/>
