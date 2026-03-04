@@ -282,9 +282,9 @@
   display: block;
 }
 
-.apply-now-poster:hover {
+/* .apply-now-poster:hover {
   transform: scale(1.1);
-}
+} */
 
 .apply-now-poster:active {
   transform: scale(1.05);

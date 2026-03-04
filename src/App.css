@@ -44,8 +44,8 @@
   left: 53%;
   top: 7vw;
   transform: translateX(-50%);
-  width: 24.635vw; /* 473px at 1920px viewport */
-  height: 3.750vw; /* 72px at 1920px viewport */
+  width: 24.635vw;
+  height: 3.750vw;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -62,6 +62,7 @@
 
 .countdown-text {
   position: relative;
+  top: 0.185vw;
   z-index: 36;
   color: white;
   font-size: 1.1vw;

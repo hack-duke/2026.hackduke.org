@@ -11,17 +11,30 @@
   overflow: hidden;
 }
 
-.down1-dateAbout {
+.down1-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.down1-About {
   position: absolute;
   z-index: 10;
   right: 0;
   top: 41.2vw;
   width: 81.2vw;
 }
-.down1-date{
+
+.down1-date {
   position: absolute;
   z-index: 10;
-  right: 19vw;
+  right: 19.7vw;
   top: 40vw;
   width: 23vw;
 }
@@ -65,7 +78,7 @@
 .down1-vending {
   top: 32vw;
   position: absolute;
-  width: 54vw;
+  width: 54.7vw;
   height: auto;
   left: 50%;
   transform: translate(-50%, 0);
@@ -170,7 +183,7 @@
 
 .down1-lower_left {
   position: absolute;
-  bottom: -1.7vw;
+  bottom: -3vw;
   width: 37.4vw;
   left: -5.8vw;
   z-index: 4;

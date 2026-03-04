@@ -1,6 +1,5 @@
 import './FoodShelfSection.css';
 import bgSvg from '../assets/horizontal-bg.svg';
-import catSvg from '../assets/cat.svg';
 import chalkBoardSvg from '../assets/chalk_board2.svg';
 import chipsSvg from '../assets/chips.svg';
 import feb1Svg from '../assets/feb_1.svg';
@@ -56,9 +55,6 @@ export default function FoodShelfSection() {
             </div>
 
             {/* Decorative items */}
-            <div className="food-item cat">
-              <img src={catSvg} alt="Cat" />
-            </div>
 
             <div className="food-item chalk-board">
               <img src={chalkBoardSvg} alt="Chalk Board" />
