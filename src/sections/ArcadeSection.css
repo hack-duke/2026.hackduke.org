@@ -226,8 +226,8 @@
   left: 12.72%;  /* Align with FAQ sign */
   top: 108%;      /* Below the FAQ sign */
   width: 83.68%; /* Same width as FAQ sign */
-  max-height: 120%; /* Limit height to prevent overflow */
-  overflow-y: auto;
+  max-height: 120%; 
+  /* overflow-y: auto; */
   z-index: 7;
   color: white;
   font-size: 3vw;
@@ -272,19 +272,10 @@
   z-index: 21;
 }
 
-.arcade-stool-left {
-  position: absolute;
-  left: 35.05%;  /* 673/1920 from Figma export */
-  top: 28.19%;   /* 1218/4320 from Figma export */
-  width: 19.53%; /* 375/1920 from Figma export */
-  height: auto;
-  z-index: 22;
-}
-
 .arcade-stool-right {
   position: absolute;
-  left: 55.89%;  /* 1073/1920 from Figma export */
-  top: 32.18%;   /* 1390/4320 from Figma export */
+  left: 49%;
+  top: 32.5%;
   width: 22.55%; /* 433/1920 from Figma export */
   height: auto;
   z-index: 22;
