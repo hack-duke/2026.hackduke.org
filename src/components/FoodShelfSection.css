@@ -177,9 +177,10 @@
 }
 
 .sign-2 {
-  left: 50%;
-  top: 50%;
-  height: 45%;
+  left: 50.9%;
+  top: 32.9%;
+  height: 61.1%;
+  width: 11.2%;
   aspect-ratio: 860 / 408;
   z-index: 9;
 }
