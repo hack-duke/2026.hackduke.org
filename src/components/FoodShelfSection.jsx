@@ -2,9 +2,9 @@ import './FoodShelfSection.css';
 import bgSvg from '../assets/horizontal-bg.svg';
 import chalkBoardSvg from '../assets/chalk_board2.svg';
 import chipsSvg from '../assets/chips.svg';
-import feb1Svg from '../assets/feb_1.svg';
+import calendarLeft from '../assets/calendar left.svg';
 import hotFoodSvg from '../assets/hot_food.svg';
-import jan31Svg from '../assets/jan_31.svg';
+import calendarRight from '../assets/calendar right.svg';
 import overlaysSvg from '../assets/overlays.svg';
 import plantPotSvg from '../assets/plant_pot.svg';
 import pockySvg from '../assets/pocky.svg';
@@ -65,11 +65,11 @@ export default function FoodShelfSection() {
             </div>
 
             <div className="food-item jan-31">
-              <img src={jan31Svg} alt="January 31" />
+              <img src={calendarLeft} alt="January 31" />
             </div>
 
             <div className="food-item feb-1">
-              <img src={feb1Svg} alt="February 1" />
+              <img src={calendarRight} alt="February 1" />
             </div>
 
             <div className="food-item overlays">
