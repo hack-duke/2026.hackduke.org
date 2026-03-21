@@ -1,7 +1,7 @@
 export const FAQ_QUESTIONS = [
   {
     title: "When? Where?",
-    content: "HackDuke: Code for Good will take place March 22-23, 2026 at Duke University's campus in Durham, NC."
+    content: "HackDuke: Code for Good will take place March 21-22, 2026 at Duke University's campus in Durham, NC."
   },
   {
     title: "What can I make?",
